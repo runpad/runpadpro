@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<style>
+#scontentmain{
+position:absolute;
+width:60%;
+left:28%;
+top:10%;
+padding:0px;
+}
+#scontentsub{
+position:absolute;
+width:100%;
+top:0;
+background-color:#E0E0D0;
+border:2px solid #B0B0B0;
+padding:15px;
+}
+</style>
+
+
+<script type="text/javascript" src="shell.js"></script>
+
+<script language=JavaScript>
+
+var res_url_shader = external.getResTranslatedUrl(location.href,"shader.png","shader.png");
+var res_url_clock = external.getResTranslatedUrl(location.href,"aclock_wosec_1fps.swf","aclock_wosec_1fps.swf");
+
+
+function getIEVersionNumber() {
+    var ua = navigator.userAgent;
+    var MSIEOffset = ua.indexOf("MSIE ");
+    
+    if (MSIEOffset == -1) {
+        return 0;
+    } else {
+        return parseFloat(ua.substring(MSIEOffset + 5, ua.indexOf(";", MSIEOffset)));
+    }
+}
+
+
+function SwitchShader(state) {
+  if ( getIEVersionNumber() >= 6.0 ) {
+    var id_name = "global_shader";
+    var obj = document.all ? document.all[id_name] : (document.getElementById ? document.getElementById(id_name) : null);
+
+    if ( obj )
+    {
+      var new_vis = state ? "visible" : "hidden";
+      
+      if ( obj.style.visibility != new_vis )
+         {
+           if ( state )
+              {
+                obj.style.visibility = new_vis;
+                obj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+res_url_shader+"',sizingMethod='scale')";
+              }
+           else
+              {
+                obj.style.visibility = new_vis;
+                obj.style.filter = "";
+              }
+         }
+    }
+  }
+}
+
+
+function OnPageShaded()
+{
+  SwitchShader(external.isPageShaded);
+}
+
+
+
+function GetStyleString(idx)
+{
+  var s_style = '';
+  if ( IsSheetActive(idx) )
+     s_style = 'font-weight: bold;';
+  else
+     s_style = 'font-weight: normal;';
+  return s_style;
+}
+
+function OnActiveSheetChanged()
+{
+  for ( var n = 0; n < GetSheetsCount(); n++ )
+      {
+        var weight = '';
+        
+        if ( IsSheetActive(n) )
+           {
+             weight = 'bold';
+           }
+        else
+           {
+             weight = 'normal';
+           }
+
+        var el = document.all['menuitem'+n];
+        el.style.fontWeight = weight;
+      }
+}
+
+function OnStatusStringChanged()
+{
+  var el = document.all['StatusString'];
+  el.innerText = GetStatusString();
+}
+
+
+</script>
+</head>
+<body marginwidth="0" marginheight="0" background="bg1.gif">
+<div id="global_shader"></div>
+
+
+<!-- info tab -->
+<script type="text/javascript">
+var s = GetInfoText();
+if ( s != '' )
+   {
+     s = '<span id="scontentmain"><span id="scontentsub">' + s + '</span></span>';
+     document.writeln(s);
+   }
+</script>
+
+
+<!-- outer table -->
+<table width=100% border="0" cellspacing="0" cellpadding="0">
+ <tr> <!-- head row -->
+  <td valign=top>
+   <table width=100% border=0 cellspacing="0" cellpadding="4">
+    <tr><td height=31 align="right" class="title">
+     <span id="StatusString">
+     <script type="text/javascript">
+     document.write(GetStatusString());
+     </script>
+     </span>
+    </td></tr>
+   </table><img src="line.gif" border=0 width="100%" height=1></td>
+ </tr>
+</table>
+
+<table width="100%" height=100% border="0" cellspacing="0" cellpadding="0">
+ <tr> <!-- menu -->
+  <td width=200 valign=top>
+   <table width=200 border=0 cellspacing=0 cellpadding=0>
+   <tr><td height=32 background="bg2.gif">&nbsp;</td></tr>
+
+<script language=JavaScript>
+    var s = '';
+    for ( var i = 0; i < GetSheetsCount(); i++ )
+        {
+          s += '<tr><td height="32" nowrap align="center" valign="middle" background="bg3.gif"><a href="javascript:DoSheetClick(' + i + ');"><span style="'+GetStyleString(i)+'" id=menuitem' + i + '>' + GetSheetName(i) + '</span></a>&nbsp;&nbsp;&nbsp;</td></tr>\n';
+        }
+    document.writeln(s);
+</script>
+
+   <tr><td height=32 background="bg4.gif">&nbsp;</td></tr>
+   </table>
+   <br><br><br>
+   <div align=center>
+   
+   <script type="text/javascript">
+    if ( getIEVersionNumber() >= 6.0 )
+       {
+         var s = '';
+         s += '<table width=180 cellspacing=0 cellpadding=0 style="border:2px solid #B0B0B0;">\n';
+         s += '<tr><td>\n';
+         s += '<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="176px" height="176px" ALIGN="">\n';
+         s += '<PARAM name="movie" value="'+res_url_clock+'">\n';
+         s += '<PARAM name="quality" value="high">\n';
+         s += '<PARAM name="bgcolor" value="#E0E0E0">\n';
+         s += '<PARAM name="wmode" value="transparent">\n';
+         s += '<PARAM name="menu" value="false"></OBJECT>\n';
+         s += '</td></tr></table>\n';
+         document.writeln(s);
+       }
+   </script>
+   
+   </div>
+  </td> <!-- data -->
+  <td width=100% align=right valign=bottom>
+
+  <table border=0 cellspacing=0 cellpadding=60>
+  <tr><td nowrap>
+  <span class="machine">
+   <script type="text/javascript">
+   document.write(GetMachineDesc());
+   </script>
+  </span>
+  </td></tr>
+  </table>
+
+  </td>
+ </tr>
+</table>
+
+<script type="text/javascript">
+	OnPageShaded();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+.dock {
+        position: relative;
+        height: 200px;
+        text-align: center;
+}
+.dock-container {
+        position: absolute;
+        height: 50px;
+        padding-left: 0px;
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+}
+a.dock-item {
+        display: block;
+        width: 40px;
+        color: #000000;
+        position: absolute;
+        top: 0px;
+        text-align: center;
+        text-decoration: none;
+        font: bold 12px Arial, Helvetica, sans-serif;
+}
+.dock-item img {
+        border: 2px;
+        border-color: #D0D0D0;
+        float: right;
+        margin: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        width: 93%;
+}
+.dock-item span {
+        display: none;
+        padding-left: 10px;
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+}

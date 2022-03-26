@@ -1,0 +1,108 @@
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "amstream.idl";
+
+interface ISampleGrabber;
+
+
+[
+    object,
+    uuid(0579154A-2B53-4994-B0D0-E773148EFF85),
+    local,
+    helpstring("ISampleGrabberCB Interface"),
+    pointer_default(unique)
+]
+interface ISampleGrabberCB : IUnknown
+{
+    HRESULT SampleCB( double SampleTime, IMediaSample * pSample );
+    HRESULT BufferCB( double SampleTime, BYTE * pBuffer, long BufferLen );
+}
+
+[
+    object,
+    uuid(6B652FFF-11FE-4fce-92AD-0266B5D7C78F),
+    local,
+    helpstring("ISampleGrabber Interface"),
+    pointer_default(unique)
+]
+interface ISampleGrabber: IUnknown
+{
+    // set this to have the filter immediate stop after
+    // garnishing a sample
+    //
+    HRESULT SetOneShot( BOOL OneShot );
+
+    // set what media type we connect to. It can be partially
+    // specified by setting only the major type, OR the major and
+    // subtype, OR major, subtype, and the formattype.
+    //
+    HRESULT SetMediaType( const AM_MEDIA_TYPE * pType );
+
+    // after something's connected to this filter, find out
+    // what it is
+    //
+    HRESULT GetConnectedMediaType( AM_MEDIA_TYPE * pType );
+
+    // call this to buffer incoming samples, so the next two methods will work
+    // If this is not called, the next two methods will return
+    // E_INVALIDARG
+    //
+    HRESULT SetBufferSamples( BOOL BufferThem );
+
+    // pass in NULL for pBuffer to get out the buffer size you need to
+    // allocate. This will NOT return a pointer to a compressed dib
+    // any longer! It will return the IMediaSample's GetPointer buffer. 
+    //
+    HRESULT GetCurrentBuffer( [in,out] long * pBufferSize, [out] long * pBuffer );
+
+    // return the currently buffered sample
+    //
+    HRESULT GetCurrentSample( [out,retval] IMediaSample ** ppSample );
+
+    // if this callback is set, then it will be called for
+    // every sample passing through the filter. Do not take a long time
+    // in the callback for smooth playback (obviously!)
+    //
+    HRESULT SetCallback( ISampleGrabberCB * pCallback, long WhichMethodToCallback );
+};
+
+
+
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+// THE LIBRARY ITSELF
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+
+[
+    uuid(78530B68-61F9-11D2-8CAD-00A024580902),
+    version(1.0),
+    helpstring("Dexter 1.0 Type Library")
+]
+library DexterLib
+{
+    importlib("stdole32.tlb");
+    importlib("stdole2.tlb");
+
+    [
+        uuid(C1F400A0-3F08-11d3-9F0B-006008039E37),
+        helpstring("MsGrab Class")
+    ]
+    coclass SampleGrabber
+    {
+        [default] interface ISampleGrabber;
+    };
+
+    // useful for movie maker and other people
+    [
+        uuid(C1F400A4-3F08-11d3-9F0B-006008039E37),
+        helpstring("NullRenderer Class")
+    ]
+    coclass NullRenderer
+    {
+        [default] interface IBaseFilter;
+    };
+
+};
+

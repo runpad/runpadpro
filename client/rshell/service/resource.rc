@@ -1,0 +1,10 @@
+
+#include <windows.h>
+#include "resource.h"
+
+
+IDI_SETTINGS	ICON	"../res/settings.ico"
+
+
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "rshell_svc.exe.manifest"
+

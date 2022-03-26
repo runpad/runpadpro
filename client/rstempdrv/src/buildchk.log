@@ -1,0 +1,48 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining d:\ntddk\src\general\giveio directory tree for files to compile.
+Compiling d:\ntddk\src\general\giveio\sys directory ********************
+'nmake.exe /c BUILDMSG=Stop. -i NTTEST= UMTEST= NOLINK=1 NOPASS0=1 386=1'
+    rc -l 409 -z "MS Sans Serif,Helv/MS Shell Dlg"  -r -fo objchk\i386\giveio.tmp -D_X86_=1 -Di386=1  -DSTD_CALL -DCONDITION_HANDLING=1 -DNT_UP=1  -DNT_INST=0 -DWIN32=100 -D_NT1X_=100 -DWINNT=1 -D_WIN32_WINNT=0x0500 -DWINVER=0x0500 -D_WIN32_IE=0x0501    -DWIN32_LEAN_AND_MEAN=1 -DDBG=1 -DDEVL=1 -DFPO=0    -DNDEBUG -D_DLL=1    -I.. -Id:\NTDDK\inc -Id:\NTDDK\inc -Id:\NTDDK\inc\ddk -Id:\NTDDK\inc\ddk\wdm -Id:\NTDDK\private\inc -Id:\NTDDK\inc .\giveio.rc
+cl -nologo -Ii386\ -I. -I.. -Id:\NTDDK\inc -Id:\NTDDK\inc -Id:\NTDDK\inc\ddk -Id:\NTDDK\inc\ddk\wdm -Id:\NTDDK\private\inc -Id:\NTDDK\inc -D_X86_=1 -Di386=1  -DSTD_CALL -DCONDITION_HANDLING=1 -DNT_UP=1  -DNT_INST=0 -DWIN32=100 -D_NT1X_=100 -DWINNT=1 -D_WIN32_WINNT=0x0500 -DWINVER=0x0500 -D_WIN32_IE=0x0501    -DWIN32_LEAN_AND_MEAN=1 -DDBG=1 -DDEVL=1 -DFPO=0    -DNDEBUG -D_DLL=1      /c /Zel /Zp8 /Gy -cbstring /W3 /Gz  /QIfdiv- /QIf /QI0f /GB /Gi- /Gm- /GX-  /GR- /GF -Z7 /Oxs /Oy-   -FId:\NTDDK\inc\warning.h  .\giveio.c
+giveio.c
+d:\ntddk\src\general\giveio\sys\giveio.c(93) : warning C4028: formal parameter 1 different from declaration
+d:\ntddk\src\general\giveio\sys\giveio.c(49) : warning C4716: 'ADriverUnload' : must return a value
+
+Stop.
+Linking d:\ntddk\src\general\giveio\sys directory ********************
+'nmake.exe /c BUILDMSG=Stop. -i LINKONLY=1 NOPASS0=1 NTTEST= UMTEST= 386=1'
+	link -out:objchk\i386\giveio.sys -machine:ix86 @C:\DOCUME~1\1\LOCALS~1\Temp\nma05700.
+Microsoft (R) Incremental Linker Version 5.12.8181
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+-STACK:262144,4096 
+-MERGE:_PAGE=PAGE 
+-MERGE:_TEXT=.text 
+-SECTION:INIT,d 
+-OPT:REF 
+-OPT:ICF 
+-IGNORE:4001,4037,4039,4044,4065,4070,4078,4087,4089,4198 
+-INCREMENTAL:NO 
+-FULLBUILD 
+-FORCE:MULTIPLE 
+-NOCOMMENT 
+/release 
+-NODEFAULTLIB 
+-debug:FULL 
+-debugtype:cv 
+-version:5.00 
+-osversion:5.00 
+-optidata 
+-driver 
+-align:0x20 
+-subsystem:native,5.00 
+-base:0x10000 
+-entry:DriverEntry@8 
+-out:objchk\i386\giveio.sys 
+objchk\i386\giveio.res 
+objchk\i386\giveio.obj 
+d:\NTDDK\libchk\i386\ntoskrnl.lib 
+d:\NTDDK\libchk\i386\hal.lib 
+d:\NTDDK\libchk\i386\wmilib.lib 
+
+Stop.

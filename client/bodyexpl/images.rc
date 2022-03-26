@@ -1,0 +1,24 @@
+100  ICON  "res/comp.ico"
+101  ICON  "res/flash.ico"
+102  ICON  "res/diskette.ico"
+103  ICON  "res/cd-rom.ico"
+104  ICON  "res/folderVip.ico"
+105  ICON  "res/folder.ico"
+106  ICON  "res/folderex.ico"
+
+110  ICON  "res/search_big.ico"
+
+120  ICON  "res/buttons/new.ico"
+121  ICON  "res/buttons/up.ico"
+122  ICON  "res/buttons/refresh.ico"
+123  ICON  "res/buttons/view.ico"
+124  ICON  "res/buttons/burn.ico"
+125  ICON  "res/buttons/bt_out.ico"
+126  ICON  "res/buttons/bt_in.ico"
+127  ICON  "res/buttons/mobile.ico"
+128  ICON  "res/buttons/mail.ico"
+129  ICON  "res/buttons/camera.ico"
+130  ICON  "res/buttons/search.ico"
+
+
+1 24 "res/bodyexpl.exe.manifest"

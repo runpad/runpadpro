@@ -1,0 +1,2 @@
+sys\giveio.c(93) : warning C4028: formal parameter 1 different from declaration
+sys\giveio.c(49) : warning C4716: 'ADriverUnload' : must return a value

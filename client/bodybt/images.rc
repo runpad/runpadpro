@@ -1,0 +1,7 @@
+
+101      ICON "res/error.ico"
+102      ICON "res/warning.ico"
+103      ICON "res/info.ico"
+
+
+1 24 "res/bodybt.exe.manifest"

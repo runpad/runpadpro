@@ -1,0 +1,9 @@
+body {
+	behavior: url(htc/hover.htc);
+}
+#top_block .menu li {
+	width: 140px;
+}
+#middle_block .promo {
+	width: auto;
+}

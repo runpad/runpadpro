@@ -1,0 +1,424 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)\r\n"
+    "LANGUAGE 25, 1\r\n"
+    "#pragma code_page(1251)\r\n"
+    "#include ""res\\rfmclient.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\rfmclient.ico"
+IDI_CONNECT             ICON                    "res\\icon1.ico"
+IDI_DISCONNECT          ICON                    "res\\connect1.ico"
+IDI_CREATEFILE          ICON                    "res\\ico00001.ico"
+IDI_CREATEDIR           ICON                    "res\\ico00002.ico"
+IDI_DELETEFILESDIR      ICON                    "res\\ico00003.ico"
+IDI_COPY                ICON                    "res\\ico00004.ico"
+IDI_MOVE                ICON                    "res\\copy1.ico"
+IDI_PREVIEW             ICON                    "res\\ico00005.ico"
+IDI_EDIT                ICON                    "res\\connect2.ico"
+IDI_ICO_CONNECT         ICON                    "res\\ico00006.ico"
+IDI_ICON_MOVEDIR        ICON                    "res\\ico00007.ico"
+IDI_ICON_DIR            ICON                    "res\\icon2.ico"
+IDI_ICON_FILE           ICON                    "res\\ico00008.ico"
+IDI_ICO_DRIVE_FIXED     ICON                    "res\\ico00009.ico"
+IDI_ICO_DRIVE_CDROM     ICON                    "res\\ico00010.ico"
+IDI_ICO_DRIVE_REMOVABLE ICON                    "res\\ico00011.ico"
+IDI_ICO_DRIVE_UNKNOWN   ICON                    "res\\ico00012.ico"
+IDI_REFRESH             ICON                    "res\\edit1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&Файл"
+    BEGIN
+        MENUITEM "Подключить компютер...\tCtrl+N", IDC_BTN_CONNECT
+        MENUITEM "Отключить текущее соединение\tCtrl+D", IDC_BTN_DISCONNECT
+        MENUITEM SEPARATOR
+        MENUITEM "Выход\tAlt+F4",               ID_APP_EXIT
+    END
+    POPUP "&Операции"
+    BEGIN
+        MENUITEM "Создать файл...\tShift+F4",   IDC_BTN_CREATEFILE
+        MENUITEM "Создать каталог...\tF7",      IDC_BTN_CREATEDIR
+        MENUITEM "Удалить\tF8",                 IDC_BTN_DELETEFILE
+        MENUITEM SEPARATOR
+        MENUITEM "Копировать\tF5",              IDC_BTN_COPY
+        MENUITEM "Переместить\tF6",             IDC_BTN_MOVE
+        MENUITEM SEPARATOR
+        MENUITEM "Просмотр...\tF3",             IDC_BTN_PREVIEW
+        MENUITEM "Правка...\tF4",               IDC_BTN_EDIT
+    END
+    POPUP "&Вид"
+    BEGIN
+        MENUITEM "Строка состояния",            ID_VIEW_STATUS_BAR
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    VK_F10,         ID_ACCEL_ENTER,         VIRTKEY, NOINVERT
+    VK_TAB,         ID_ACCEL_TAB,           VIRTKEY, NOINVERT
+    VK_F1,          ID_OPEN_LIST_DRIVES_LEFT, VIRTKEY, ALT, NOINVERT
+    VK_F2,          ID_OPEN_LIST_DRIVES_RIGHT, VIRTKEY, ALT, NOINVERT
+    "N",            IDC_BTN_CONNECT,        VIRTKEY, CONTROL, NOINVERT
+    VK_F5,          IDC_BTN_COPY,           VIRTKEY, NOINVERT
+    VK_F7,          IDC_BTN_CREATEDIR,      VIRTKEY, NOINVERT
+    VK_F4,          IDC_BTN_CREATEFILE,     VIRTKEY, SHIFT, NOINVERT
+    VK_F8,          IDC_BTN_DELETEFILE,     VIRTKEY, NOINVERT
+    "D",            IDC_BTN_DISCONNECT,     VIRTKEY, CONTROL, NOINVERT
+    VK_F4,          IDC_BTN_EDIT,           VIRTKEY, NOINVERT
+    VK_F6,          IDC_BTN_MOVE,           VIRTKEY, NOINVERT
+    VK_F3,          IDC_BTN_PREVIEW,        VIRTKEY, NOINVERT
+    "R",            IDC_BTN_REFRESH,        VIRTKEY, CONTROL, NOINVERT
+    "A",            ID_ACCEL_SEL_ALL,       VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDR_MAINFRAME DIALOGEX 0, 0, 107, 16
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+END
+
+IDR_TOOLBAR_DLG DIALOGEX 0, 0, 325, 27
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "",IDC_BTN_DISCONNECT,30,1,30,25,BS_ICON
+    CONTROL         "",IDC_BTN_CONNECT,"Button",BS_OWNERDRAW | BS_ICON | WS_TABSTOP,0,1,30,25
+    PUSHBUTTON      "",IDC_BTN_CREATEFILE,67,1,30,25,BS_ICON
+    PUSHBUTTON      "",IDC_BTN_CREATEDIR,97,1,30,25,BS_ICON
+    PUSHBUTTON      "",IDC_BTN_DELETEFILE,127,1,30,25,BS_ICON
+    PUSHBUTTON      "",IDC_BTN_COPY,165,1,30,25,BS_ICON
+    PUSHBUTTON      "",IDC_BTN_MOVE,195,1,30,25,BS_ICON
+    PUSHBUTTON      "",IDC_BTN_PREVIEW,233,1,30,25,BS_ICON
+    PUSHBUTTON      "",IDC_BTN_EDIT,263,1,30,25,BS_ICON
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDVERT,63,3,1,23
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDVERT,161,3,1,23
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDVERT,229,3,1,23
+    PUSHBUTTON      "",IDC_BTN_REFRESH,294,1,30,25,BS_ICON
+END
+
+IDD_DLG_CONNECT DIALOGEX 0, 0, 276, 51
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Сетевое подключение"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,166,32,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,219,32,50,14
+    LTEXT           "Имя компютера в сети:",IDC_STATIC,7,7,80,8
+    EDITTEXT        IDC_ED_NET_NAME,90,7,179,12,ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_STATICEDGE
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,10,25,259,1
+END
+
+IDD_DLG_NEW_FILI DIALOGEX 0, 0, 244, 70
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Создать новый файл"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_ED_NAME,7,24,230,12,ES_AUTOHSCROLL | NOT WS_BORDER,WS_EX_STATICEDGE
+    DEFPUSHBUTTON   "OK",IDOK,135,49,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,187,49,50,14
+    LTEXT           "Имя нового файла:",IDC_STATIC_NAME,7,10,164,8
+END
+
+IDD_PREVIEW_WINDOW DIALOGEX 0, 0, 514, 289
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Просмотр файла :"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_PROCESS_DLG DIALOGEX 0, 0, 318, 95
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Копирование"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_PROGRESS_OPER,"msctls_progress32",WS_BORDER | 0x1,7,38,303,14
+    LTEXT           "Static",IDC_STATIC_STR1,7,10,304,8
+    LTEXT           "Static",IDC_STATIC_STR2,7,24,304,8
+    CONTROL         "",IDC_PROGRESS_COPY,"msctls_progress32",WS_BORDER | 0x1,7,56,303,14
+    PUSHBUTTON      "Отмена",IDC_BTN_OPERATION_BREAK,136,75,50,14
+END
+
+IDD_DLG_REPORT_ERROR DIALOGEX 0, 0, 421, 187
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Отчет по ошибкам"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Закрыть",IDCANCEL,365,166,50,14
+    PUSHBUTTON      "Сохранить...",IDC_BTN_SAVE,309,166,50,14
+    CONTROL         "",IDC_LIST_ERRORS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,407,154
+END
+
+IDR_COMMAND_LINE DIALOGEX 0, 0, 81, 16
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    RTEXT           "Static",IDC_STAT_PATH,6,3,19,8
+    COMBOBOX        IDC_CMB_CMD_LINE,29,2,48,210,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDR_MAINFRAME, DIALOG
+    BEGIN
+        RIGHTMARGIN, 59
+    END
+
+    IDR_TOOLBAR_DLG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 295
+        BOTTOMMARGIN, 26
+    END
+
+    IDD_DLG_NEW_FILI, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 237
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 63
+    END
+
+    IDD_PROCESS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 311
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 89
+    END
+
+    IDD_DLG_REPORT_ERROR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 414
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 180
+    END
+
+    IDR_COMMAND_LINE, DIALOG
+    BEGIN
+        RIGHTMARGIN, 76
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE initialization failed.  Make sure that the OLE libraries are the correct version."
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "Удаленный файловый менеджер для Runpad Pro"
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_ERR_LIC             "Программа может быть запущена только при установленном Runpad Shell или Runpad Server с лицензионным ключем, поддерживающим данную функциональность\n\nРабота будет продолжена в ограниченном по времени режиме"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Удаленный файловый менеджер для Runpad Pro"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+LANGUAGE 25, 1
+#pragma code_page(1251)
+#include "res\rfmclient.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

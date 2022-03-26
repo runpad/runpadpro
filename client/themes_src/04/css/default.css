@@ -1,0 +1,261 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	list-style: none;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	background: #2e2e2e;
+}
+img.png {
+	behavior: url(htc/png.htc);
+}
+.sp {
+	clear: both;
+}
+
+
+.all {
+	width: 100%;
+	height: 100%;
+}
+.all1 {
+	background: url(../imgs/status_right.jpg) 100% 100% no-repeat;
+}
+.all2 {
+	background: url(../imgs/top_bg.gif) 0 0 repeat-x;
+}
+.all3 {
+	background: url(../imgs/title_left.gif) 0 0 no-repeat;
+}
+.all4 {
+	background: url(../imgs/top_right.jpg) 100% 0 no-repeat;
+}
+
+table {
+	height: 100%;
+	width: 100%;
+}
+
+
+#global_shader {
+position: absolute;
+left: 0px;
+top: 0px;
+width: 100%;
+height: 100%;
+border: none;
+background: none;
+margin: 0px 0px 0px 0px;
+visibility: hidden;
+z-index: 1001;
+}
+
+
+
+/*~~~~~~~~~~~~~! top block !~~~~~~~~~~~*/
+#top_block {
+	height: 82px;
+	vertical-align: top;
+}
+#status_block {
+	font: 18px Arial, Verdana, sans-serif;
+	color: #ff7e38;
+	text-align: right;
+	padding: 8px 45px;
+}
+#company_block {
+	font: 18px Arial, Verdana, sans-serif;
+	color: #202020;
+	margin: 18px 0 0 60px;
+}
+#company_block div {
+	font: 18px Arial, Verdana, sans-serif;
+	color: #202020;
+}
+
+/*~~~~~~~~~~~~~! menu block !~~~~~~~~~~~*/
+#menu_block {
+	width: 380px;
+	vertical-align: middle;
+	padding-top: 40px;
+	/*background: black;*/
+}
+#menu_block .menu_position {
+	position: absolute;
+	z-index: 10;
+	height: 600px;
+	width: 420px;
+	top: 130px;
+	margin-bottom: 40px;
+}
+#menu_block .btn_up_block {
+	height: 29px;
+	width: 148px;
+	margin: 0 0 10px 0;
+}
+#menu_block .btn_up {
+	margin: 0;
+	height: 29px;
+	width: 148px;
+	background: url(../imgs/btn_up.jpg) 0 0 no-repeat;
+	text-decoration: none;
+}
+#menu_block .btn_down_block {
+	height: 29px;
+	width: 148px;
+}
+#menu_block .btn_down {
+	margin: 0;
+	height: 29px;
+	width: 148px;
+	background: url(../imgs/btn_down.jpg) 0 0 no-repeat;
+	text-decoration: none;
+}
+#menu_target {
+	height: 520px;
+	overflow: hidden;
+}
+#menu {
+	position: absolute;
+	margin: 0 0 0 0;
+	/*margin-top: -208px;*/
+}
+#menu .item {
+	margin: 0 -210px 10px 0;
+}
+#menu .item .left {
+	float: left;
+	height: 94px;
+	width: 26px;
+	margin: 0;
+	background: url(../imgs/item_pic.jpg) 50% 0 no-repeat;
+}
+#menu .active .left {
+	width: 42px;
+	background: url(../imgs/item_pic_active.jpg) 50% 0 no-repeat;
+}
+#menu .item .photo {
+	float: left;
+	height: 94px;
+	width: 122px;
+	margin-left: -3px;
+}
+#menu .item img.border {
+	height: 94px;
+	width: 122px;
+	margin-left: -122px;
+}
+#menu .item a {
+	display: block;
+	position: absolute;
+	left: 0;
+	z-index: 10;
+	height: 94px;
+	width: 148px;
+}
+#menu .active a {
+	width: 164px;
+}
+#menu .item a img {
+	height: 94px;
+	width: 100%;
+}
+#menu .active a img {
+	width: 164px;
+}
+#menu .item .text {
+	display: none;
+	position: absolute;
+	z-index: 15;
+	left: 174px;
+	font: 18px Arial, Verdana, sans-serif;
+	color: #ff7e38;
+}
+#menu .active .text {
+	color: #FF4FA2;
+	left: 170px;
+}
+#menu .item .text .shadow {
+	position: absolute;
+	z-index: -5;
+	font: 18px Arial, Verdana, sans-serif;
+	color: #222;
+	margin: 1px 0 0 1px;
+}
+#menu .item div.border {
+	float: left;
+	height: 94px;
+	width: 1000px;
+	margin-left: -1003px;
+}
+#menu .active div.border {
+}
+
+/*~~~~~~~~~~~~~! promo block !~~~~~~~~~~~*/
+#promo_block {
+	/*background: green;*/
+	vertical-align: top;
+}
+#promo_block .stretch {
+	float: right;
+	height: 512px;
+	line-height: 512px;
+	width: 176px;
+	margin-left: -176px;
+}
+#promo_block .promo {
+	position: relative;
+	z-index: 2;
+	margin: 0 174px 0 240px;
+}
+#promo_block .promo_text {
+	background: url(../imgs/promo1.gif) 0 0 no-repeat;
+}
+#promo_block .promo_text div {
+	background: url(../imgs/promo2.gif) 100% 0 no-repeat;
+	padding: 30px 30px 0 30px;
+	font: 14px/17px Arial, Verdana, sans-serif;
+}
+#promo_block .promo .promo_bottom_right {
+	float: right;
+	height: 30px;
+	width: 33px;
+	margin-left: -33px;
+	background: url(../imgs/promo4.gif) 100% 100% no-repeat;
+}
+#promo_block .promo .promo_bottom_left {
+	background: url(../imgs/promo3.gif) 0 100% no-repeat;
+	margin-right: 30px;
+	height: 30px;
+}
+#promo_block .promo .promo_pic {
+	position: absolute;
+	height: 151px;
+	width: 100%;
+	background: url(../imgs/promo_pic.gif) 20% 0 no-repeat;
+}
+
+/*~~~~~~~~~~~~~! info block !~~~~~~~~~~~*/
+#info_block {
+	vertical-align: top;
+	text-align: right;
+	height: 171px;
+	padding-right: 90px;
+	/*background: red;*/
+}
+#info_block div {
+	float: right;
+	background: url(../imgs/status_bg.gif) 0 0 repeat-x;
+}
+#info_block div div {
+	float: none;
+	margin: 0;
+	padding: 10px 0 10px 35px;
+	background: url(../imgs/status_left.gif) 0 0 no-repeat;
+	font: bold 90px "Arial Narrow", Arial, Verdana, sans-serif;
+	color: #ff7e38;
+}

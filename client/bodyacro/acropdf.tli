@@ -1,0 +1,220 @@
+// Created by Microsoft (R) C/C++ Compiler Version 13.10.3077 (93bf8c54).
+//
+// c:\acropdf.tli
+//
+// Wrapper implementations for Win32 type library acropdf.dll
+// compiler-generated file created 03/27/07 at 18:29:52 - DO NOT EDIT!
+
+#pragma once
+
+//
+// dispinterface _IAcroAXDocShimEvents wrapper method implementations
+//
+
+inline HRESULT _IAcroAXDocShimEvents::OnError ( ) {
+    return _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _IAcroAXDocShimEvents::OnMessage ( ) {
+    return _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+//
+// interface IAcroAXDocShim wrapper method implementations
+//
+
+inline _bstr_t IAcroAXDocShim::Getsrc ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_src(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IAcroAXDocShim::Putsrc ( _bstr_t pVal ) {
+    HRESULT _hr = put_src(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL IAcroAXDocShim::LoadFile ( _bstr_t fileName ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_LoadFile(fileName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IAcroAXDocShim::setShowToolbar ( VARIANT_BOOL On ) {
+    HRESULT _hr = raw_setShowToolbar(On);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::gotoFirstPage ( ) {
+    HRESULT _hr = raw_gotoFirstPage();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::gotoLastPage ( ) {
+    HRESULT _hr = raw_gotoLastPage();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::gotoNextPage ( ) {
+    HRESULT _hr = raw_gotoNextPage();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::gotoPreviousPage ( ) {
+    HRESULT _hr = raw_gotoPreviousPage();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::setCurrentPage ( long n ) {
+    HRESULT _hr = raw_setCurrentPage(n);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::goForwardStack ( ) {
+    HRESULT _hr = raw_goForwardStack();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::goBackwardStack ( ) {
+    HRESULT _hr = raw_goBackwardStack();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::setPageMode ( _bstr_t pageMode ) {
+    HRESULT _hr = raw_setPageMode(pageMode);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::setLayoutMode ( _bstr_t layoutMode ) {
+    HRESULT _hr = raw_setLayoutMode(layoutMode);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::setNamedDest ( _bstr_t namedDest ) {
+    HRESULT _hr = raw_setNamedDest(namedDest);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::Print ( ) {
+    HRESULT _hr = raw_Print();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::printWithDialog ( ) {
+    HRESULT _hr = raw_printWithDialog();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::setZoom ( float percent ) {
+    HRESULT _hr = raw_setZoom(percent);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::setZoomScroll ( float percent, float left, float top ) {
+    HRESULT _hr = raw_setZoomScroll(percent, left, top);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::setView ( _bstr_t viewMode ) {
+    HRESULT _hr = raw_setView(viewMode);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::setViewScroll ( _bstr_t viewMode, float offset ) {
+    HRESULT _hr = raw_setViewScroll(viewMode, offset);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::setViewRect ( float left, float top, float width, float height ) {
+    HRESULT _hr = raw_setViewRect(left, top, width, height);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::printPages ( long from, long to ) {
+    HRESULT _hr = raw_printPages(from, to);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::printPagesFit ( long from, long to, VARIANT_BOOL shrinkToFit ) {
+    HRESULT _hr = raw_printPagesFit(from, to, shrinkToFit);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::printAll ( ) {
+    HRESULT _hr = raw_printAll();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::printAllFit ( VARIANT_BOOL shrinkToFit ) {
+    HRESULT _hr = raw_printAllFit(shrinkToFit);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::setShowScrollbars ( VARIANT_BOOL On ) {
+    HRESULT _hr = raw_setShowScrollbars(On);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _variant_t IAcroAXDocShim::GetVersions ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_GetVersions(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline HRESULT IAcroAXDocShim::setCurrentHightlight ( long a, long b, long c, long d ) {
+    HRESULT _hr = raw_setCurrentHightlight(a, b, c, d);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::setCurrentHighlight ( long a, long b, long c, long d ) {
+    HRESULT _hr = raw_setCurrentHighlight(a, b, c, d);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcroAXDocShim::postMessage ( const _variant_t & strArray ) {
+    HRESULT _hr = raw_postMessage(strArray);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _variant_t IAcroAXDocShim::GetmessageHandler ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_messageHandler(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline void IAcroAXDocShim::PutmessageHandler ( const _variant_t & pVarOut ) {
+    HRESULT _hr = put_messageHandler(pVarOut);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}

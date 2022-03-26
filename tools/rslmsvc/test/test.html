@@ -1,0 +1,217 @@
+<html>
+<head>
+<script>
+
+var server = 'localhost:81';
+
+
+function AsyncReq()
+{
+  // constructor:
+  this.ajax = null;
+
+
+  // public:
+  this.Destructor = function()
+  {
+    this.ajax = null;
+  }
+
+  this.NewRequest = function(fail_if_busy,url,body)
+  {
+    if ( fail_if_busy )
+       {
+         if ( this.ajax )
+            {
+              var state = this.ajax.readyState;
+              if ( state >= 1 && state <= 3 )
+                 {
+                   return false;
+                 }
+            }
+       }
+
+    if ( url == null || url == '' )
+       {
+         return false;
+       }
+
+    if ( !this.ajax )
+       {
+         this.ajax = this.createAjaxObj();
+
+         if ( !this.ajax )
+            {
+              return false;
+            }
+       }
+
+    var is_post = (body!=null && body!='');
+    
+    this.ajax.open(is_post?'POST':'GET',url,true);  // abort() automatically called if needed here
+
+    if ( is_post )
+       {
+         this.ajax.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+       }
+
+    this.ajax.send(body);
+    return true;
+  }
+
+  this.Abort = function()
+  {
+    if ( this.ajax )
+       {
+         try {
+          this.ajax.abort();
+         } catch(e) {}
+
+         this.ajax = null;
+       }
+  }
+
+  this.Clear = function()
+  {
+    this.ajax = null;
+  }
+
+  this.IsResultReady = function()
+  {
+    return this.ajax && this.ajax.readyState == 4;
+  }
+
+  this.GetResultHTTPStatus = function()
+  {
+    return this.IsResultReady() ? this.ajax.status : -1;
+  }
+
+  this.GetResultAsXML = function()
+  {
+    return this.IsResultReady() ? this.ajax.responseXML : null;
+  }
+
+  this.GetResultAsText = function()
+  {
+    return this.IsResultReady() ? this.ajax.responseText : null;
+  }
+
+  this.GetResultHeader = function(header)
+  {
+    return this.IsResultReady() ? this.ajax.getResponseHeader(header) : null;
+  }
+
+
+  // private
+  this.createAjaxObj = function()
+  {
+    var request=null;
+
+    // пытаемся создать объект для MSXML 2 и старше
+    if(!request) try {
+      request=new ActiveXObject('Msxml2.XMLHTTP');
+    } catch (e){}
+
+    // не вышло... попробуем для MSXML 1
+    if(!request) try {
+      request=new ActiveXObject('Microsoft.XMLHTTP');
+    } catch (e){}
+
+    // не вышло... попробуем для Mozilla
+    if(!request) try {
+      request=new XMLHttpRequest();
+    } catch (e){}
+
+    return request;
+  }
+
+} //AsyncReq
+
+
+var ajax = new AsyncReq();
+var ajax2 = new AsyncReq();
+
+
+
+function Updating()
+{
+  if ( ajax.IsResultReady() && ajax.GetResultHTTPStatus() == 200 )
+     {
+       var xml = ajax.GetResultAsXML();
+       var doc = xml.documentElement;
+       if ( doc && doc.tagName == 'response' )
+          {
+            var res = '';
+            
+            var coll = doc.getElementsByTagName('lic');
+            if ( coll )
+               {
+                 for ( var n = 0; n < coll.length; n++ )
+                     {
+                       res += coll[n].childNodes[0].nodeValue + ', ';
+                     }
+               }
+
+            document.getElementById('list').innerText = res;
+          }
+     }
+  
+  var licname = document.getElementById('licname');
+  ajax.NewRequest(true,'http://'+server+'/licman?action=getlist&licname='+licname.value);
+}
+
+
+function SetLic()
+{
+  with (ajax2)
+  {
+    var licname = document.getElementById('licname');
+    var licidx = document.getElementById('licidx');
+    var delta = document.getElementById('delta');
+    
+    if ( !NewRequest(true,'http://'+server+'/licman?action=update&licname='+licname.value+'&licidx='+licidx.value+'&delta='+delta.value) )
+    {
+      alert('Busy... Try again later');
+    }
+  }
+}
+
+
+function Init()
+{
+  window.setInterval('Updating()',1000);
+}
+
+
+</script>
+</head>
+<body onLoad="Init()">
+<font face=verdana size=3>
+
+Licname:<br>
+<input type=text id="licname" value="123"><br>
+<br>
+Idx:<br>
+<input type=text id="licidx" value="0"><br>
+<br>
+Delta:<br>
+<input type=text id="delta" value="60"><br>
+<br>
+<input type=button value="Set" onclick="SetLic()" style="width:100px;">
+
+<br>
+<br>
+<br>
+<font size="+2">
+List:
+<b>
+<div id="list">
+</div>
+</b>
+</font>
+<br>
+
+
+</font>
+</body>
+</html>

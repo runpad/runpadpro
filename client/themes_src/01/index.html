@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+
+	<script type="text/javascript" src="ie_ver.js"></script>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="style2.css">
+
+<style>
+#scontentmain{
+position:absolute;
+width:60%;
+left:20%;
+top:35%;
+padding:0px;
+}
+#scontentsub{
+position:absolute;
+width:100%;
+top:0;
+background-color:#E0E0D0;
+border:2px solid #B0B0B0;
+padding:15px;
+}
+
+#global_shader {
+position: absolute;
+left: 0px;
+top: 0px;
+width: 100%;
+height: 2000px;
+border: none;
+background: none;
+margin: 0px 0px 0px 0px;
+visibility: hidden;
+z-index: 1001;
+}
+
+
+</style>
+
+
+<script type="text/javascript" src="fisheye/jquery.js"></script>
+<script type="text/javascript" src="fisheye/fisheye.js"></script>
+<script type="text/javascript" src="fisheye/iutil.js"></script>
+
+<script type="text/javascript" src="shell.js"></script>
+
+<script type="text/javascript">
+
+var res_url_shader = external.getResTranslatedUrl(location.href,"shader.png","shader.png");
+
+
+function SwitchShader(state) {
+  var id_name = "global_shader";
+  var obj = document.all ? document.all[id_name] : (document.getElementById ? document.getElementById(id_name) : null);
+
+  if ( obj )
+  {
+    var new_vis = state ? "visible" : "hidden";
+    
+    if ( obj.style.visibility != new_vis )
+       {
+         if ( state )
+            {
+              obj.style.visibility = new_vis;
+              obj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+res_url_shader+"',sizingMethod='scale')";
+            }
+         else
+            {
+              obj.style.visibility = new_vis;
+              obj.style.filter = "";
+            }
+       }
+  }
+}
+
+
+function OnPageShaded()
+{
+  SwitchShader(external.isPageShaded);
+}
+
+
+
+function GetStyleString(idx)
+{
+  var s_style = '';
+  if ( IsSheetActive(idx) )
+     s_style = 'border-color: #FFDD22; border-width: 4px;';
+  return s_style;
+}
+
+function OnActiveSheetChanged()
+{
+  for ( var n = 0; n < GetSheetsCount(); n++ )
+      {
+        var s_color = '';
+        var s_border = '';
+
+        if ( IsSheetActive(n) )
+           {
+             s_color = '#FFDD22';
+             s_border = '4px';
+           }
+        else
+           {
+             s_color = '#D0D0D0';
+             s_border = '2px';
+           }
+        
+        var el = document.all['menuitem'+n];
+        el.style.borderColor = s_color;
+        el.style.borderWidth = s_border;
+      }
+}
+
+function OnStatusStringChanged()
+{
+  var el = document.all['StatusString'];
+  el.innerText = GetStatusString();
+}
+
+</script>
+</head>
+<body marginwidth="0" marginheight="0" background="bg1.gif">
+<div id="global_shader"></div>
+
+
+<!-- info tab -->
+<script type="text/javascript">
+var s = GetInfoText();
+if ( s != '' )
+   {
+     s = '<span id="scontentmain"><span id="scontentsub">' + s + '</span></span>';
+     document.writeln(s);
+   }
+</script>
+
+
+<!-- title -->
+<table width=100% border=0 cellspacing=0 cellpadding=5>
+<tr><td nowrap align=right valign=middle height=23 class="title">
+<span id="StatusString">
+<script type="text/javascript">
+document.write(GetStatusString());
+</script>
+</span>
+</td></tr></table>
+
+
+<img src="line.gif" border=0 width="100%" height=1><br>
+
+<!-- menu -->
+<script type="text/javascript">
+
+if ( GetSheetsCount() > 0 )
+   {
+     var s = '<div class="dock" id="dock"><div class="dock-container">\n';
+     for ( var n = 0; n < GetSheetsCount(); n++ )
+         {
+           var s_name = GetSheetName(n);
+           var s_pic = GetSheetBGPic(n);
+
+           var s_style = GetStyleString(n);
+           if ( s_style != '' )
+              s_style = ' style="'+s_style+'" ';
+
+           s += '<a class="dock-item" href="javascript:DoSheetClick('+n+');"><img id="menuitem'+n+'"'+s_style+' src="'+s_pic+'" alt="'+s_name+'"><span><font size=4>'+s_name+'</font></span></a>\n';
+         }
+     s += '</div></div>\n';
+     document.writeln(s);
+
+     jQuery(document).ready(
+             function()
+             {
+                     jQuery('#dock').Fisheye(
+                             {
+                                     maxWidth: 100,
+                                     items: 'a',
+                                     itemsText: 'span',
+                                     container: '.dock-container',
+                                     itemWidth: 90,
+                                     proximity: 100,
+                                     halign : 'center'
+                             }
+                     )
+             }
+     );
+   }
+</script>
+
+<script type="text/javascript">
+	OnPageShaded();
+</script>
+
+</body>
+</html>

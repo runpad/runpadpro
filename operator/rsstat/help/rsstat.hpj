@@ -1,0 +1,15 @@
+[OPTIONS]
+LCID=0x419 0x0 0x0 ; Russian
+REPORT=Yes
+HLP=rsstat.hlp
+
+[FILES]
+rsstat.rtf
+
+[MAP]
+IDH_1=1
+IDH_2=2
+IDH_3=3
+
+[FONTS]
+=,,204

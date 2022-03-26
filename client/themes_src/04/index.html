@@ -1,0 +1,121 @@
+<DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+	<title>Скин для программы</title>
+	<meta content="text/html; charset=windows-1251" http-equiv="Content-Type" />
+
+	<script type="text/javascript" src="js/ie_ver.js"></script>
+
+	<script type="text/javascript">
+		var res_url_sifr = external.getResTranslatedUrl(location.href,"sifr2/DS_Sofachrome.swf","sifr2/DS_Sofachrome.swf");
+		var res_url_shader = external.getResTranslatedUrl(location.href,"imgs/shader.png","imgs/shader.png");
+		var res_url_iborder = external.getResTranslatedUrl(location.href,"imgs/items_border.png","imgs/items_border.png");
+		var res_url_aborder = external.getResTranslatedUrl(location.href,"imgs/items_active_border.png","imgs/items_active_border.png");
+	</script>
+
+	
+	<link type="text/css" href="css/default.css" rel="stylesheet" />	
+	<!--[if LT IE 7]>		
+	<link type="text/css" href="css/ie6.css" rel="stylesheet" />	
+	<script type="text/javascript">
+		document.execCommand('BackgroundImageCache', false, true);
+	</script>
+	<![endif]-->
+	<!-- sIFR 2.0 -->
+	<link rel="stylesheet" href="sifr2/sIFR-screen.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="sifr2/sIFR-print.css" type="text/css" media="print">
+	<script src="sifr2/sifr.js" type="text/javascript"></script>
+	<script src="sifr2/sifr-addons.js" type="text/javascript"></script>
+	<!-- / sIFR 2.0 -->
+	<script type="text/javascript" src="js/protoculous.js"></script>
+	<script type="text/javascript" src="js/loader.js"></script>
+	<script type="text/javascript" src="js/scroller.js"></script>
+	
+
+</head>
+
+<body>
+<div id="global_shader"></div>
+	<div class="all all1" id="all">
+		<div class="all all2">
+			<div class="all all3">
+				<div class="all all4">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td id="top_block" colspan="2">
+								<div id="status_block">
+								</div>
+								<div id="company_block">
+									<div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td id="menu_block" rowspan="2">
+								<div class="menu_position">
+									<div class="btn_up_block"><a href="#" class="btn_up">&nbsp;</a></div>
+								<div id="menu_target">
+									<ul id="menu">
+									
+									</ul>
+								</div>
+									<div class="btn_down_block"><a href="#" class="btn_down">&nbsp;</a></div>	
+								</div>				
+							</td>
+							<td id="promo_block">
+								<div class="stretch">&nbsp;</div>
+									<div class="promo">
+										<div class="promo_text"><div>
+										<!-- -->
+										</div></div>
+										<div class="promo_bottom_right">
+											&nbsp;
+										</div>
+										<div class="promo_bottom_left">
+											&nbsp;
+										</div>
+										<div class="promo_pic">
+											&nbsp;
+										</div>
+									</div>
+							</td>
+						</tr>
+						<tr>
+							<td id="info_block">
+								<div><div></div></div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	OnPageShaded();
+	setLoader('status_block','company_block','menu','promo_block','info_block');
+	loadBlocks();
+	load_menu();
+</script>
+
+<!--~~~~! sIFR selectors !~~~~-->
+<script type="text/javascript">
+//<![CDATA[
+if(typeof sIFR == "function"){
+	sIFR.replaceElement(named({sSelector:"#company_block div", sFlashSrc:res_url_sifr, sColor:"#FF7E38", sWmode:"transparent", nPaddingTop:0, nPaddingBottom:0, sFlashVars:"textalign=left&textsize=16&offsetTop=0"}));
+
+};
+//]]>
+</script>
+
+
+<script type="text/javascript">
+	statusPostLoader();  // fix: when loading with empty status string
+	promoPostLoader();
+</script>
+
+</body>
+</html>

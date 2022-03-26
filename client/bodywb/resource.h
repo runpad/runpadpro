@@ -1,0 +1,27 @@
+
+#define IDC_STATIC                      -1
+#define IDI_BASEICON1                   101
+#define IDI_BASEICON2                   102
+#define IDI_ICON                        103
+#define IDD_DIALOG                      104
+#define IDA_MOVIE                       106
+#define IDI_ICONQ			107
+#define IDD_DIALOGQ                     108
+#define IDC_ANIMATE                     1000
+#define IDC_PROGRESS                    1001
+#define IDC_FILE                        1002
+#define IDC_SERVER                      1003
+#define IDC_BYTES                       1004
+#define IDC_DEST                        1005
+#define IDC_RATE                        1006
+#define IDC_OPEN			1007
+#define IDC_SAVE			1008
+#define IDC_LABEL1                      1009
+#define IDC_LABEL2                      1010
+#define IDC_LABEL3                      1011
+#define IDC_LABEL4                      1012
+#define IDC_LABEL5                      1013
+#define IDC_LABEL6                      1014
+#define IDC_LABEL7                      1015
+#define IDC_LABEL8                      1016
+#define IDC_LABEL9                      1017

@@ -1,0 +1,9 @@
+EXPORTS
+    ThemeCreate
+    ThemeDestroy
+    ThemeRefresh
+    ThemeRepaint
+    ThemeOnStatusStringChanged
+    ThemeOnActiveSheetChanged
+    ThemeOnPageShaded
+    ThemeOnDisplayChanged

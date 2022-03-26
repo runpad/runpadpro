@@ -1,0 +1,89 @@
+#pragma code_page(1251)
+
+#include <windows.h>
+#include "resource.h"
+
+
+
+IDI_BASEICON1 ICON "res/icon1.ico"
+IDI_BASEICON2 ICON "res/icon2.ico"
+
+IDI_ICON      ICON "res/download/icon.ico"
+IDI_ICONQ     ICON "res/download/question.ico"
+IDA_MOVIE     AVI  "res/download/ani.avi"
+
+
+IDD_DIALOG DIALOG 0, 0, 250, 143
+STYLE DS_MODALFRAME | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Shell Dlg"
+BEGIN
+    CONTROL         "",IDC_ANIMATE,"SysAnimate32",ACS_TRANSPARENT,0,0,250,43
+    LTEXT           "",IDC_LABEL1,6,47,48,8
+    LTEXT           "",IDC_LABEL2,6,58,48,8
+    LTEXT           "",IDC_LABEL3,6,80,48,8
+    LTEXT           "",IDC_LABEL4,6,91,48,8
+    LTEXT           "",IDC_LABEL5,6,102,48,8
+    LTEXT           "",IDC_FILE,60,47,178,8
+    LTEXT           "",IDC_SERVER,60,58,178,8
+    LTEXT           "",IDC_BYTES,60,80,178,8
+    LTEXT           "",IDC_DEST,60,91,178,8
+    LTEXT           "",IDC_RATE,60,102,178,8
+    CONTROL         "",IDC_PROGRESS,"msctls_progress32",0x0,5,68,238,9
+    PUSHBUTTON      "",IDCANCEL,194,123,50,14
+END
+
+
+IDD_DIALOGQ DIALOG 0, 0, 250, 71
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Shell Dlg"
+BEGIN
+    ICON            IDI_ICONQ,IDC_STATIC,12,6,21,20
+    LTEXT           "",IDC_LABEL1,48,6,192,8
+    LTEXT           "",IDC_FILE,48,18,192,8
+    PUSHBUTTON      "",IDC_OPEN,48,48,60,14
+    PUSHBUTTON      "",IDC_SAVE,114,48,60,14
+    DEFPUSHBUTTON   "",IDCANCEL,180,48,60,14
+END
+
+
+1 VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "NodaSoft\0"
+            VALUE "FileDescription", "Runpad Browser\0"
+            VALUE "FileVersion", "1, 0, 0, 0\0"
+            VALUE "InternalName", "\0"
+            VALUE "LegalCopyright", "\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Runpad Browser\0"
+            VALUE "ProductVersion", "1, 0, 0, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "res/bodywb.exe.manifest"

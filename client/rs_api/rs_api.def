@@ -1,0 +1,8 @@
+
+LIBRARY      "rs_api.dll"
+
+EXPORTS
+	DllCanUnloadNow       PRIVATE
+	DllGetClassObject     PRIVATE
+	DllRegisterServer     PRIVATE
+	DllUnregisterServer   PRIVATE

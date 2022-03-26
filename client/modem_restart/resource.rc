@@ -1,0 +1,25 @@
+
+#pragma code_page(1251)
+
+#include <windows.h>
+#include "resource.h"
+
+
+
+IDI_ICON	ICON	"icon.ico"
+
+
+IDD_MAIN DIALOG DISCARDABLE  0, 0, 220, 110
+STYLE DS_MODALFRAME | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Перезагрузка DSL-модема/роутера"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LTEXT           "Выберите модем:",IDC_STATIC,10,10,180,8
+    COMBOBOX        IDC_COMBO,10,20,180,100,CBS_DROPDOWNLIST | CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "IP-адрес модема:",IDC_STATIC,10,40,180,8
+    EDITTEXT        IDC_EDIT,10,50,70,14,ES_AUTOHSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Перезагрузить",IDOK,10,80,80,14
+END
+
+
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "modem_restart.exe.manifest"

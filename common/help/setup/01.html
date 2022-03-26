@@ -1,0 +1,305 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<link rel="stylesheet" type="text/css" href="../shared/style.css">
+<script language="javascript">
+<!--
+function Click(id)
+{
+  var el;
+  for ( var n = document.body.sourceIndex; n < document.all.length; n++ )
+      {
+        el = document.all[n];
+        if ( el.id == id )
+           {
+             if ( el.style.display == "" )
+                el.style.display = "none";
+             else
+                el.style.display = "";
+             
+             break;
+           }
+      }
+}
+//-->
+</script>
+</head>
+<body marginwidth="0" marginheight="0">
+<table width="100%" height="30" border="0" cellspacing="0" cellpadding="5" bgcolor="#E0E0E0">
+<tr><td align="left" valign="middle" class="title">Шаг 1. Установка SQL-сервера</td></tr></table>
+<br>
+<div align="justify">
+<br>
+
+SQL-база необходима для хранения всех клиентских настроек, базы VIP-пользователей, прав доступа операторов и пр.<br>
+В данной версии ПО поддерживаются MS SQL Server 2000/2005/2008, а также MySQL<br>
+Установочные файлы есть <b>на сайте Runpad Pro</b> и доступны для <b>бесплатного</b> использования в соотв. с лицензией Microsoft (информация для MSSQL)<br>
+<br>
+Выберите используемый сервер по желанию:<br>
+<br>
+
+<a href="javascript:;" onClick="Click('00_01');"><img src="plus.gif" align=middle border=0 width=11 height=11>
+<b><u>MS SQL 2000</u></b></a><br><img src="blank.gif" border=0 width=2 height=4><br>
+<DIV ID="00_01" STYLE="display:none"><br><table border=0 cellspacing=0 cellpadding=10><tr><td>
+
+
+
+<a href="javascript:;" onClick="Click('01_01');"><img src="plus.gif" align=middle border=0 width=11 height=11>
+<b><u>Если ранее SQL-сервер не был установлен</u></b></a><br><img src="blank.gif" border=0 width=2 height=4><br>
+<DIV ID="01_01" STYLE="display:none"><br><table border=0 cellspacing=0 cellpadding=10><tr><td>
+
+Саму установку, как правило, необходимо производить на отдельную серверную машину, либо на машину оператора (если отдельной серверной нет).<br>
+Установка запустится только из-под учетной записи <b>администратора</b> компьютера!<br>
+<br>
+Если установка производится на <b>Windows Vista</b>, то нужно подтвердить установку несмотря на предупреждение системы.<br>
+В ходе установки будет запрошен новый пароль для встроенной учетной записи администратора со спец. логином <b>"sa"</b>:<br>
+<br><img src="01.gif" border=0><br><br>
+<br>
+Далее с этим логином можно будет входить в базу для изменения всех настроек.<br>
+Также предлагается выбрать область видимости SQL-сервера в зависимости от конфигурации сети и ваших потребностей. <br>
+Если SQL-сервер устанавливается на машину оператора и на этой же машине будет сервер Runpad Pro, то лучше всего выбрать область видимости "только на этом компьютере", в остальных случаях - либо доступ с любой машины (в том числе и удаленной), либо только в пределах локальной сети.<br>
+<br>
+После успешной установки в трее должна появиться иконка индикатора соединения с базой:<br>
+<br><img src="02.gif" border=0><br><br>
+
+</td></tr></table><br><br></DIV>
+
+<a href="javascript:;" onClick="Click('01_02');"><img src="plus.gif" align=middle border=0 width=11 height=11>
+<b><u>Если уже установлен MS SQL Server 2000 или MSDE</u></b></a><br><img src="blank.gif" border=0 width=2 height=4><br>
+<DIV ID="01_02" STYLE="display:none"><br><table border=0 cellspacing=0 cellpadding=10><tr><td>
+
+Если уже установлен MS SQL Server 2000 или MSDE, то необходимо просто проверить его конфигурацию.<br>
+<br>
+Убедитесь, что режим аутентификации сервера установлен как <b>"смешанный"</b> или <b>"аутентификация SQL"</b>.<br>
+Это можно проверить в системном реестре:<br>
+<b>HKLM\Software\Microsoft\MSSqlserver\MSSqlServer\LoginMode</b> должен быть <b>0 (режим SQL)</b> или <b>2 (смешанный)</b> (но не <b>1 (аутентификация Windows)</b>)<br>
+<font color=red><b>Внимание для 64-битных ОС!</b></font> Необходимо запускать 32-битную версию <b>regedit</b> для редактирования реестра. Она находится по след. пути:<br><b>%systemroot%\syswow64\regedit.exe</b> (например, <b>C:\Windows\syswow64\regedit.exe</b>)<br>
+<br>
+Далее нужно проверить, есть ли доступ к серверу через сеть в случае удаленного расположения SQL-сервера.<br>
+Для этого запустите утилиту сервера <b>\Microsoft SQL Server\80\Tools\Binn\SVRNETCN.exe</b><br>
+и добавьте протокол TCP/IP (если ранее не был добавлен):<br>
+<br><img src="03.gif" border=0><br><br>
+<br>
+Также убедитесь, что в вашем брандмауэре (Firewall'е) добавлен для разрешения TCP порт <b>1433</b>:<br>
+<br><img src="04.gif" border=0><br><br>
+<br>
+После чего необходимо перезапустить сервис <b>MSSQLSERVER</b>:<br>
+<b>net.exe stop mssqlserver</b><br>
+<b>net.exe start mssqlserver</b><br>
+<br>
+Для дальнейшей работы вам необходимо знать логин и пароль администратора БД. <br>
+Это может быть учетная запись <b>"sa"</b> или любая другая (например, <b>"manager"</b> если установлен GameClass).<br>
+
+</td></tr></table><br><br></DIV>
+
+<a href="javascript:;" onClick="Click('01_03');"><img src="plus.gif" align=middle border=0 width=11 height=11>
+<b><u>Переустановка SQL-сервера MSDE/2000</u></b></a><br><img src="blank.gif" border=0 width=2 height=4><br>
+<DIV ID="01_03" STYLE="display:none"><br><table border=0 cellspacing=0 cellpadding=10><tr><td>
+
+Удаление SQL-сервера необходимо производить через "Панель управления->Установка и удаление программ".<br>
+При этом после удаления сервера файл базы Runpad Pro <b>останется</b> на диске.<br>
+Для повторной установки сервера его необходимо <b>обязательно удалить!</b><br>
+Находятся файлы по след. пути: "\Microsoft SQL Server\MSSQL\Data\RunpadPro.*"<br>
+После чего можно устанавливать SQL-сервер.<br>
+
+</td></tr></table><br><br></DIV>
+
+</td></tr></table><br><br></DIV>
+
+<!-- -->
+
+<a href="javascript:;" onClick="Click('00_02');"><img src="plus.gif" align=middle border=0 width=11 height=11>
+<b><u>MS SQL 2005/2008</u></b></a><br><img src="blank.gif" border=0 width=2 height=4><br>
+<DIV ID="00_02" STYLE="display:none"><br><table border=0 cellspacing=0 cellpadding=10><tr><td>
+
+
+
+<a href="javascript:;" onClick="Click('02_01');"><img src="plus.gif" align=middle border=0 width=11 height=11>
+<b><u>Если ранее SQL-сервер не был установлен</u></b></a><br><img src="blank.gif" border=0 width=2 height=4><br>
+<DIV ID="02_01" STYLE="display:none"><br><table border=0 cellspacing=0 cellpadding=10><tr><td>
+
+Саму установку, как правило, необходимо производить на отдельную серверную машину, либо на машину оператора (если отдельной серверной нет).<br>
+Установка запустится только из-под учетной записи <b>администратора</b> компьютера!<br>
+<br>
+В ходе установки будет запрошен новый пароль для встроенной учетной записи администратора со спец. логином <b>"sa"</b>:<br>
+<br><img src="25.gif" border=0><br><br>
+<br>
+Далее с этим логином можно будет входить в базу для изменения всех настроек.<br>
+Также предлагается выбрать область видимости SQL-сервера в зависимости от конфигурации сети и ваших потребностей. <br>
+Если SQL-сервер устанавливается на машину оператора и на этой же машине будет сервер Runpad Pro, то лучше всего выбрать область видимости "только на этом компьютере", в остальных случаях - либо доступ с любой машины (в том числе и удаленной), либо только в пределах локальной сети.<br>
+<br>
+
+</td></tr></table><br><br></DIV>
+
+<a href="javascript:;" onClick="Click('02_02');"><img src="plus.gif" align=middle border=0 width=11 height=11>
+<b><u>Если уже установлен MS SQL Server 2005/2008</u></b></a><br><img src="blank.gif" border=0 width=2 height=4><br>
+<DIV ID="02_02" STYLE="display:none"><br><table border=0 cellspacing=0 cellpadding=10><tr><td>
+
+Если уже установлен MS SQL Server 2005 или 2008, то необходимо просто проверить его конфигурацию.<br>
+<br>
+<b><font color=red>Внимание!!!</font> Если ранее SQL-сервер был установлен с инстанцией отличной от инстанции по умолчанию, или установлен в нескольких инстанциях, то при подключении к серверу необходимо указывать не только имя машины или ее IP-адрес, но и имя инстанции или ее порт.<br>
+Например: SERVER\Instance1 или 192.168.1.10,1433<br>
+Имя инстанции можно посмотреть через "SQL Server Configuration Manager". Инстанция по умолчанию носит имя "MSSQLSERVER".<br>
+Для удаленного доступа к инстанции, отличной от инстанции по умолчанию, необходимо включение службы "SQL Server Browser" на сервере, что также удобно сделать через "SQL Server Configuration Manager".<br>
+</b>
+<br>
+Убедитесь, что режим аутентификации сервера установлен как <b>"смешанный"</b> или <b>"аутентификация SQL"</b>.<br>
+Это можно проверить в системном реестре:<br>
+<b>HKLM\SOFTWARE\Microsoft\Microsoft SQL Server\MSSQL.&lt;InstanceId&gt;\MSSQLServer\LoginMode</b> должен быть <b>0 (режим SQL)</b> или <b>2 (смешанный)</b> (но не <b>1 (аутентификация Windows)</b>)<br>
+<font color=red><b>Внимание для 64-битных ОС!</b></font> Если установлена 32-битная версия сервера, то необходимо запускать 32-битную версию <b>regedit</b> для редактирования реестра. Она находится по след. пути:<br><b>%systemroot%\syswow64\regedit.exe</b> (например, <b>C:\Windows\syswow64\regedit.exe</b>)<br>
+<br>
+Далее нужно проверить, есть ли доступ к серверу через сеть в случае удаленного расположения SQL-сервера.<br>
+Для этого запустите утилиту сервера <b>SQL Server Configuration Manager</b> (через меню "ПУСК")<br>
+и проверьте, чтобы был включен протокол TCP/IP:<br>
+<br><img src="26.gif" border=0><br><br>
+<br>
+Также необходимо установить порт <b>1433</b> (или другой) в свойствах протокола:<br>
+<br><img src="27.gif" border=0><br><br>
+<br>
+Также убедитесь, что в вашем брандмауэре (Firewall'е) добавлен для разрешения этот TCP порт <b>1433</b> (или другой):<br>
+<br><img src="04.gif" border=0><br><br>
+<br>
+Также убедитесь, что в вашем брандмауэре (Firewall'е) добавлен для разрешения UDP порт <b>1434</b> (если используется инстанция отличная от инстанции по умолчанию):<br>
+<br><img src="36.gif" border=0><br><br>
+<br>
+После чего необходимо перезапустить сервис <b>MSSQLSERVER</b>:<br>
+<br><img src="28.gif" border=0><br><br>
+<br>
+Для дальнейшей работы вам необходимо знать логин и пароль администратора БД. <br>
+Это может быть учетная запись <b>"sa"</b> или любая другая (например, <b>"manager"</b> если установлен GameClass).<br>
+
+</td></tr></table><br><br></DIV>
+
+<a href="javascript:;" onClick="Click('02_03');"><img src="plus.gif" align=middle border=0 width=11 height=11>
+<b><u>Переустановка SQL-сервера 2005/2008</u></b></a><br><img src="blank.gif" border=0 width=2 height=4><br>
+<DIV ID="02_03" STYLE="display:none"><br><table border=0 cellspacing=0 cellpadding=10><tr><td>
+
+Удаление SQL-сервера необходимо производить через "Панель управления->Установка и удаление программ".<br>
+При этом после удаления сервера файл базы Runpad Pro <b>останется</b> на диске.<br>
+Для повторной установки сервера его необходимо <b>обязательно удалить!</b><br>
+Находятся файлы по след. пути: "\Microsoft SQL Server\MSSQL.&lt;InstanceId&gt;\MSSQL\Data\RunpadPro.*"<br>
+После чего можно устанавливать SQL-сервер.<br>
+
+</td></tr></table><br><br></DIV>
+
+</td></tr></table><br><br></DIV>
+
+
+<!-- -->
+
+<a href="javascript:;" onClick="Click('00_03');"><img src="plus.gif" align=middle border=0 width=11 height=11>
+<b><u>MySQL</u></b></a><br><img src="blank.gif" border=0 width=2 height=4><br>
+<DIV ID="00_03" STYLE="display:none"><br><table border=0 cellspacing=0 cellpadding=10><tr><td>
+
+
+
+<a href="javascript:;" onClick="Click('03_01');"><img src="plus.gif" align=middle border=0 width=11 height=11>
+<b><u>Если ранее MySQL-сервер не был установлен</u></b></a><br><img src="blank.gif" border=0 width=2 height=4><br>
+<DIV ID="03_01" STYLE="display:none"><br><table border=0 cellspacing=0 cellpadding=10><tr><td>
+
+Рекомендуется загрузить последнюю стабильную версию с <a href="http://www.mysql.com" target=_blank>www.mysql.com</a><br>
+Можно устанавливать как на <b>Windows</b>, так и на <b>Unix</b>-системы. <br>
+<br>
+<b><font color=red>Внимание!</font></b> <b>Версии MySQL ниже 5.0.27 не поддерживаются (из-за критических ошибок в сервере).</b><br>
+<br>
+Саму установку, как правило, необходимо производить на отдельную серверную машину, либо на машину оператора (если отдельной серверной нет).<br>
+<br>
+В ходе установки необходимо разрешить доступ к серверу по сети и добавить в исключения Firewall'а порт сервера (данной опции может и не быть).<br>
+В Runpad Pro поддерживается не только <b>порт 3306</b>, но для указания другого порта нужно выполнить ряд настроек (см. раздел "Если уже установлен MySQL").<br>
+Также необходимо создать пароль для специального встроенного пользователя <b>"root"</b>. 
+Далее под этим пользователем можно будет входить в базу и изменять все настройки. Если предлагается ввести <b>текущий пароль</b> для <b>root</b>, то оставьте это поле <b>пустым</b>!<br>
+Нужно не забыть этому пользователю разрешить доступ к базе с удаленных машин, отметив соотв. опцию в настройках (ее может не быть).<br>
+<b>Внимание!</b> Если база MySQL будет расположена на отдельной машине или на локальной, но при подключении используется имя машины вместо <b>localhost</b>, то по умолчанию под пользователем <b>root</b> подключиться будет нельзя! 
+Для этого рекомендуется создать дополнительного пользователя с правами <b>"DB Admin"</b> (см. ниже), и все администраторские действия с базой осуществлять от его имени, а не от <b>root</b>!<br>
+<br><img src="29_1.gif" border=0><br><br>
+<br><img src="29_2.gif" border=0><br><br>
+<br><img src="29_3.gif" border=0><br><br>
+<br><img src="29_4.gif" border=0><br><br>
+<br><img src="29_5.gif" border=0><br><br>
+<br>
+Если в установке не предлагалось добавить в исключения Firewall'а порт сервера, то необходимо это сделать вручную:<br>
+<br><img src="31.gif" border=0><br><br>
+<br>
+<b><font color=red>Внимание!</font></b> Необходимо установить переменную сервера <b>max_allowed_packet</b> для правильной работы с Runpad Pro.<br>
+В файле папки MySQL-сервера <b>my.ini (Windows)</b> или <b>my.cnf (Unix)</b> в раздел <b>[mysqld]</b> необходимо добавить строчку:<br>
+<br>
+<b>max_allowed_packet=32M</b><br>
+<br>
+После чего нужно <b>перезапустить</b> MySQL-сервер. Для Windows это:<br>
+<b>net stop mysql</b><br>
+<b>net start mysql</b><br>
+<br>
+<b>Внимание!</b> Если данный параметр <b>уже прописан</b> в конфигурационном файле, то необходимо только изменить его значение, а не добавлять новый!<br>
+<br>
+Для версии MySQL ниже 5.6 файл my.ini по умолчанию расположен в %ProgramFiles%\MySQL\MySQL Server x.xx\my.ini<br>
+Для версии MySQL от 5.6 файл my.ini по умолчанию расположен в C:\ProgramData\MySQL\MySQL Server x.xx\my.ini<br>
+<br>
+<br>
+<!--
+При первом входе в базу под пользователем <b>root</b> может быть выдана ошибка:<br>
+<br>
+<b>Access denied for user 'root'@'%';</b><br>
+или<br>
+<b>Host ... is not allowed to connect to this MySQL server</b><br>
+<br>
+Причина в том, что старые версии сервера не устанавливают по умолчанию права для <b>root</b> при подключении с "нелокальной" машины.<br>
+Исправить ситуацию можно тремя способами:<br>
+1) Установить программу администратора Runpad Pro на ту же машину, где установлен и MySQL-сервер, а при подключении указывать не имя машины, а ключевое слово <b>"localhost"</b><br>
+2) Удалить данную версию MySQL-сервера и установить самую последнюю стабильную<br>
+3) Дать недостающие права пользователю <b>root</b>. Для этого необходимо на машине с установленным сервером запустить утилиту <b>mysql</b> с параметрами:<br>
+<b>mysql -u root -p&lt;пароль_для_root&gt;</b><br>
+Например:<br>
+<b>mysql -u root -p123</b><br>
+После соединения с сервером ввести следующий SQL-запрос:<br>
+<br>
+<b>GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY 'пароль_для_root' WITH GRANT OPTION;</b><br>
+<br>
+После чего можно соединяться с базой от имени <b>root</b> с удаленной машины.<br>
+<br>
+-->
+
+</td></tr></table><br><br></DIV>
+
+<a href="javascript:;" onClick="Click('03_02');"><img src="plus.gif" align=middle border=0 width=11 height=11>
+<b><u>Если уже установлен MySQL</u></b></a><br><img src="blank.gif" border=0 width=2 height=4><br>
+<DIV ID="03_02" STYLE="display:none"><br><table border=0 cellspacing=0 cellpadding=10><tr><td>
+
+Если уже установлен MySQL, то необходимо выполнить ряд <b>обязательных действий</b> для правильной работы Runpad Pro.<br>
+<br>
+<b><font color=red>Внимание!</font></b> <b>Версии MySQL ниже 5.0.27 не поддерживаются (из-за критических ошибок в сервере).</b><br>
+<br>
+ &#8226; Если у вас установлена старая версия, то рекомендуется ее удалить и установить самую последнюю стабильную.<br>
+ &#8226; Если же вы не желаете удалять старую версию, а хотели бы только обновить ее на новую, то возможно придется 
+обновить и права пользователей. См. раздел справки <a href="http://dev.mysql.com/doc/refman/5.0/en/mysql-fix-privilege-tables.html" target=_blank>http://dev.mysql.com/doc/refman/5.0/en/mysql-fix-privilege-tables.html</a><br>
+ &#8226; Если вы не хотите ничего делать со старой версией, то можете установить новую версию в качестве второй инстанции и в этом случае две или более версий сервера будут работать одновременно. В таком случае нужно просто установить новую версию (см. раздел "Если ранее MySQL-сервер не был установлен"), но в ходе установки указать другое <b>имя инстанции</b> (сервиса для Windows), а также <b>другой порт</b> (отличный от порта по умолчанию 3306).<br>
+Для того, чтобы Runpad Pro мог работать с новой инстанцией нужно на машинах <b>Администратора</b>, <b>Оператора</b> и <b>Сервера RunpadPro</b> записать в реестр Windows номер порта MySQL.<br>
+В разделе <b>HKEY_LOCAL_MACHINE\Software</b> нужно создать подраздел <b>RunpadProCommon</b>, а в нем <b>СТРОКОВЫЙ</b> параметр <b>def_mysql_port</b>, для которого нужно записать числовое значение порта (например, <b>3307</b> - строка должна быть без кавычек, только числа!). После чего все соединения с MySQL в Runpad Pro будут идти через этот порт и, как следствие, вы сможете работать сразу с несколькими версиями MySQL-серверов.<br>
+<font color=red><b>Внимание для 64-битных ОС!</b></font> Необходимо запускать 32-битную версию <b>regedit</b> для редактирования реестра. Она находится по след. пути:<br><b>%systemroot%\syswow64\regedit.exe</b> (например, <b>C:\Windows\syswow64\regedit.exe</b>)<br>
+<br>
+Для настройки установленного сервера запустите утилиту <b>MySQLInstanceConfig</b> и выполните все те же самые действия, которые описаны в предыдущем разделе:<br>
+"Если ранее MySQL-сервер не был установлен".<br>
+После чего необходимо <b>обязательно</b> настроить переменную сервера <b>max_allowed_packet</b>, о чем также написано в предыдущем разделе:<br>
+"Если ранее MySQL-сервер не был установлен".<br>
+<br>
+<b><font color=red>Внимание!</font></b> См. раздел <b>"Если ранее MySQL-сервер не был установлен"</b>.<br>
+
+</td></tr></table><br><br></DIV>
+
+<a href="javascript:;" onClick="Click('03_03');"><img src="plus.gif" align=middle border=0 width=11 height=11>
+<b><u>Переустановка MySQL-сервера</u></b></a><br><img src="blank.gif" border=0 width=2 height=4><br>
+<DIV ID="03_03" STYLE="display:none"><br><table border=0 cellspacing=0 cellpadding=10><tr><td>
+
+Удаление SQL-сервера необходимо производить стандартным образом через "Панель управления->Установка и удаление программ".<br>
+При этом после удаления сервера файл базы Runpad Pro может остаться, а может и нет (зависит от версии сервера).<br>
+Для повторной установки сервера его рекомендуется удалить (как и всю папку \MySQL), однако местоположение файлов БД также зависит от версии сервера.<br>
+
+</td></tr></table><br><br></DIV>
+
+</td></tr></table><br><br></DIV>
+
+<br>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+#include <windows.h>
+
+
+center.css     23  "res/html/center.css"
+bg.gif         23  "res/html/bg.gif"
+check.gif      23  "res/html/check.gif"
+help.gif       23  "res/html/help.gif"
+logo1.gif      23  "res/html/logo1.gif"
+logo2.gif      23  "res/html/logo2.gif"
+index.htm      23  "res/html/index.htm"
+bottom.html    23  "res/html/bottom.html"
+page0.html     23  "res/html/page0.html"
+page1.html     23  "res/html/page1.html"
+page2.html     23  "res/html/page2.html"
+page3.html     23  "res/html/page3.html"
+top.html       23  "res/html/top.html"
+
+
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "res/setup_selector.exe.manifest"

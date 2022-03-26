@@ -1,0 +1,11 @@
+
+100 ICON "res/connect2.ico"
+101 ICON "res/disconnect.ico"
+102 ICON "res/dbconf.ico"
+103 ICON "res/help.ico"
+
+110 ICON "res/page1.ico"
+111 ICON "res/page2.ico"
+
+
+1 24 "res/rssettings.exe.manifest"

@@ -1,0 +1,21 @@
+EXPORTS
+  WlxNegotiate
+  WlxInitialize
+  WlxDisplaySASNotice
+  WlxLoggedOutSAS
+  WlxActivateUserShell
+  WlxLoggedOnSAS
+  WlxDisplayLockedNotice
+  WlxWkstaLockedSAS
+  WlxIsLockOk
+  WlxIsLogoffOk
+  WlxLogoff
+  WlxShutdown
+  WlxScreenSaverNotify
+  WlxNetworkProviderLoad
+  WlxDisplayStatusMessage
+  WlxGetStatusMessage
+  WlxRemoveStatusMessage
+  WlxGetConsoleSwitchCredentials
+  WlxReconnectNotify
+  WlxDisconnectNotify

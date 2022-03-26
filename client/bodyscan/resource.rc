@@ -1,0 +1,7 @@
+
+#include <windows.h>
+
+
+101 ICON "res/icon.ico"
+
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "res/bodyscan.exe.manifest"

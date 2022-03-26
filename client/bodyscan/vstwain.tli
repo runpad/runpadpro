@@ -1,0 +1,995 @@
+// Created by Microsoft (R) C/C++ Compiler Version 13.10.3077 (e9c3fd8d).
+//
+// c:\vstwain.tli
+//
+// Wrapper implementations for Win32 type library vstwain.dll
+// compiler-generated file created 09/09/07 at 13:18:10 - DO NOT EDIT!
+
+#pragma once
+
+//
+// dispinterface _IVintaSoftTwainEvents wrapper method implementations
+//
+
+inline HRESULT _IVintaSoftTwainEvents::PostScan ( long flag ) {
+    return _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0003", flag);
+}
+
+//
+// interface IVintaSoftTwain wrapper method implementations
+//
+
+inline long IVintaSoftTwain::StartDevice ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_StartDevice(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IVintaSoftTwain::StopDevice ( ) {
+    HRESULT _hr = raw_StopDevice();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline long IVintaSoftTwain::SelectSource ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_SelectSource(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IVintaSoftTwain::GetSourceProductName ( long index ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetSourceProductName(index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IVintaSoftTwain::Acquire ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_Acquire(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline IPictureDisp * IVintaSoftTwain::GetImage ( long index ) {
+    IPictureDisp * _result = 0;
+    HRESULT _hr = raw_GetImage(index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline IPictureDisp * IVintaSoftTwain::GetCurrentImage ( ) {
+    IPictureDisp * _result = 0;
+    HRESULT _hr = raw_GetCurrentImage(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetImageAsHBitmap ( long index ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetImageAsHBitmap(index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetCurrentImageAsHBitmap ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetCurrentImageAsHBitmap(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::Register ( _bstr_t user, _bstr_t email, _bstr_t regCode ) {
+    long _result = 0;
+    HRESULT _hr = raw_Register(user, email, regCode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetdisableAfterAcquire ( ) {
+    long _result = 0;
+    HRESULT _hr = get_disableAfterAcquire(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutdisableAfterAcquire ( long pVal ) {
+    HRESULT _hr = put_disableAfterAcquire(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::GetshowUI ( ) {
+    long _result = 0;
+    HRESULT _hr = get_showUI(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutshowUI ( long pVal ) {
+    HRESULT _hr = put_showUI(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::GetautoCleanBuffer ( ) {
+    long _result = 0;
+    HRESULT _hr = get_autoCleanBuffer(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutautoCleanBuffer ( long pVal ) {
+    HRESULT _hr = put_autoCleanBuffer(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::GetsourcesCount ( ) {
+    long _result = 0;
+    HRESULT _hr = get_sourcesCount(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetsourceIndex ( ) {
+    long _result = 0;
+    HRESULT _hr = get_sourceIndex(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutsourceIndex ( long pVal ) {
+    HRESULT _hr = put_sourceIndex(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::GetmaxImages ( ) {
+    long _result = 0;
+    HRESULT _hr = get_maxImages(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutmaxImages ( long pVal ) {
+    HRESULT _hr = put_maxImages(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::GetnumImages ( ) {
+    long _result = 0;
+    HRESULT _hr = get_numImages(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GeterrorCode ( ) {
+    long _result = 0;
+    HRESULT _hr = get_errorCode(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IVintaSoftTwain::GeterrorString ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_errorString(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IVintaSoftTwain::SaveImage ( long index, _bstr_t path ) {
+    long _result = 0;
+    HRESULT _hr = raw_SaveImage(index, path, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IVintaSoftTwain::GetjpegQuality ( ) {
+    int _result = 0;
+    HRESULT _hr = get_jpegQuality(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutjpegQuality ( int pVal ) {
+    HRESULT _hr = put_jpegQuality(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::OpenDataSource ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_OpenDataSource(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::CloseDataSource ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_CloseDataSource(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetxferCount ( ) {
+    long _result = 0;
+    HRESULT _hr = get_xferCount(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutxferCount ( long pVal ) {
+    HRESULT _hr = put_xferCount(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::GetfeederPresent ( ) {
+    long _result = 0;
+    HRESULT _hr = get_feederPresent(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetfeederEnabled ( ) {
+    long _result = 0;
+    HRESULT _hr = get_feederEnabled(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutfeederEnabled ( long pVal ) {
+    HRESULT _hr = put_feederEnabled(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::GetfeederLoaded ( ) {
+    long _result = 0;
+    HRESULT _hr = get_feederLoaded(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetautoFeed ( ) {
+    long _result = 0;
+    HRESULT _hr = get_autoFeed(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutautoFeed ( long pVal ) {
+    HRESULT _hr = put_autoFeed(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::GetpaperDetectable ( ) {
+    long _result = 0;
+    HRESULT _hr = get_paperDetectable(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::SetFtpServerParams ( _bstr_t host, int port, _bstr_t user, _bstr_t password, _bstr_t account ) {
+    long _result = 0;
+    HRESULT _hr = raw_SetFtpServerParams(host, port, user, password, account, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IVintaSoftTwain::SetFtpServerAdvParams ( long passiveMode, long timeout ) {
+    HRESULT _hr = raw_SetFtpServerAdvParams(passiveMode, timeout);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline long IVintaSoftTwain::SetFtpProxyServerParams ( int proxyType, _bstr_t host, int port, _bstr_t user, _bstr_t password ) {
+    long _result = 0;
+    HRESULT _hr = raw_SetFtpProxyServerParams(proxyType, host, port, user, password, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::SaveImageToFtp ( long index, _bstr_t serverPath ) {
+    long _result = 0;
+    HRESULT _hr = raw_SaveImageToFtp(index, serverPath, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::Getresolution ( ) {
+    long _result = 0;
+    HRESULT _hr = get_resolution(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::Putresolution ( long pVal ) {
+    HRESULT _hr = put_resolution(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _variant_t IVintaSoftTwain::GetResolutions ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_GetResolutions(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline enum enumUnitOfMeasure IVintaSoftTwain::GetunitOfMeasure ( ) {
+    enum enumUnitOfMeasure _result;
+    HRESULT _hr = get_unitOfMeasure(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutunitOfMeasure ( enum enumUnitOfMeasure pVal ) {
+    HRESULT _hr = put_unitOfMeasure(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _variant_t IVintaSoftTwain::GetUnitsOfMeasure ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_GetUnitsOfMeasure(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline enum enumPixelType IVintaSoftTwain::GetpixelType ( ) {
+    enum enumPixelType _result;
+    HRESULT _hr = get_pixelType(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutpixelType ( enum enumPixelType pVal ) {
+    HRESULT _hr = put_pixelType(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _variant_t IVintaSoftTwain::GetPixelTypes ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_GetPixelTypes(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long IVintaSoftTwain::GetmodalUI ( ) {
+    long _result = 0;
+    HRESULT _hr = get_modalUI(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutmodalUI ( long pVal ) {
+    HRESULT _hr = put_modalUI(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::GetImageLayout ( float * left, float * top, float * right, float * bottom ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetImageLayout(left, top, right, bottom, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::SetImageLayout ( float left, float top, float right, float bottom ) {
+    long _result = 0;
+    HRESULT _hr = raw_SetImageLayout(left, top, right, bottom, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetpageSize ( ) {
+    long _result = 0;
+    HRESULT _hr = get_pageSize(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutpageSize ( long pVal ) {
+    HRESULT _hr = put_pageSize(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _variant_t IVintaSoftTwain::GetPageSizes ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_GetPageSizes(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline float IVintaSoftTwain::Getbrightness ( ) {
+    float _result = 0;
+    HRESULT _hr = get_brightness(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::Putbrightness ( float pVal ) {
+    HRESULT _hr = put_brightness(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline float IVintaSoftTwain::GetbrightnessMinValue ( ) {
+    float _result = 0;
+    HRESULT _hr = get_brightnessMinValue(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline float IVintaSoftTwain::GetbrightnessMaxValue ( ) {
+    float _result = 0;
+    HRESULT _hr = get_brightnessMaxValue(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetautoBright ( ) {
+    long _result = 0;
+    HRESULT _hr = get_autoBright(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutautoBright ( long pVal ) {
+    HRESULT _hr = put_autoBright(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline float IVintaSoftTwain::Getcontrast ( ) {
+    float _result = 0;
+    HRESULT _hr = get_contrast(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::Putcontrast ( float pVal ) {
+    HRESULT _hr = put_contrast(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline float IVintaSoftTwain::GetcontrastMinValue ( ) {
+    float _result = 0;
+    HRESULT _hr = get_contrastMinValue(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline float IVintaSoftTwain::GetcontrastMaxValue ( ) {
+    float _result = 0;
+    HRESULT _hr = get_contrastMaxValue(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum enumTiffCompression IVintaSoftTwain::GettiffCompression ( ) {
+    enum enumTiffCompression _result;
+    HRESULT _hr = get_tiffCompression(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PuttiffCompression ( enum enumTiffCompression pVal ) {
+    HRESULT _hr = put_tiffCompression(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::GettiffMultiPage ( ) {
+    long _result = 0;
+    HRESULT _hr = get_tiffMultiPage(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PuttiffMultiPage ( long pVal ) {
+    HRESULT _hr = put_tiffMultiPage(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline short IVintaSoftTwain::GetftpState ( ) {
+    short _result = 0;
+    HRESULT _hr = get_ftpState(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IVintaSoftTwain::GetftpStateString ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_ftpStateString(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IVintaSoftTwain::GetftpBytesTotal ( ) {
+    long _result = 0;
+    HRESULT _hr = get_ftpBytesTotal(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetftpBytesUploaded ( ) {
+    long _result = 0;
+    HRESULT _hr = get_ftpBytesUploaded(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline short IVintaSoftTwain::GetftpErrorCode ( ) {
+    short _result = 0;
+    HRESULT _hr = get_ftpErrorCode(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IVintaSoftTwain::GetftpErrorString ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_ftpErrorString(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IVintaSoftTwain::PutftpCancel ( long _arg1 ) {
+    HRESULT _hr = put_ftpCancel(_arg1);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::GetdataSourceState ( ) {
+    long _result = 0;
+    HRESULT _hr = get_dataSourceState(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetpixelFlavor ( ) {
+    long _result = 0;
+    HRESULT _hr = get_pixelFlavor(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutpixelFlavor ( long pVal ) {
+    HRESULT _hr = put_pixelFlavor(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::Getduplex ( ) {
+    long _result = 0;
+    HRESULT _hr = get_duplex(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetduplexEnabled ( ) {
+    long _result = 0;
+    HRESULT _hr = get_duplexEnabled(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutduplexEnabled ( long pVal ) {
+    HRESULT _hr = put_duplexEnabled(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _variant_t IVintaSoftTwain::GetImageAsByteArray ( long index ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_GetImageAsByteArray(index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long IVintaSoftTwain::GetendOfJob ( ) {
+    long _result = 0;
+    HRESULT _hr = get_endOfJob(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::Getcapability ( ) {
+    long _result = 0;
+    HRESULT _hr = get_capability(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::Putcapability ( long pVal ) {
+    HRESULT _hr = put_capability(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::IsCapSupported ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_IsCapSupported(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum enumCapType IVintaSoftTwain::GetcapType ( ) {
+    enum enumCapType _result;
+    HRESULT _hr = get_capType(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutcapType ( enum enumCapType pVal ) {
+    HRESULT _hr = put_capType(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline float IVintaSoftTwain::GetcapValue ( ) {
+    float _result = 0;
+    HRESULT _hr = get_capValue(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutcapValue ( float pVal ) {
+    HRESULT _hr = put_capValue(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IVintaSoftTwain::GetcapStringValue ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_capStringValue(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IVintaSoftTwain::PutcapStringValue ( _bstr_t pVal ) {
+    HRESULT _hr = put_capStringValue(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline float IVintaSoftTwain::GetcapDefValue ( ) {
+    float _result = 0;
+    HRESULT _hr = get_capDefValue(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline float IVintaSoftTwain::GetcapMinValue ( ) {
+    float _result = 0;
+    HRESULT _hr = get_capMinValue(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutcapMinValue ( float pVal ) {
+    HRESULT _hr = put_capMinValue(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline float IVintaSoftTwain::GetcapMaxValue ( ) {
+    float _result = 0;
+    HRESULT _hr = get_capMaxValue(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutcapMaxValue ( float pVal ) {
+    HRESULT _hr = put_capMaxValue(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::GetcapStepSize ( ) {
+    long _result = 0;
+    HRESULT _hr = get_capStepSize(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetcapNumItems ( ) {
+    long _result = 0;
+    HRESULT _hr = get_capNumItems(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutcapNumItems ( long pVal ) {
+    HRESULT _hr = put_capNumItems(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _variant_t IVintaSoftTwain::GetcapItems ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_capItems(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline void IVintaSoftTwain::PutcapItems ( const _variant_t & pVal ) {
+    HRESULT _hr = put_capItems(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::GetCap ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetCap(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::SetCap ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_SetCap(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::IsBlankImage ( long index ) {
+    long _result = 0;
+    HRESULT _hr = raw_IsBlankImage(index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetImageWidth ( long index ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetImageWidth(index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetImageHeight ( long index ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetImageHeight(index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetImageBPP ( long index ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetImageBPP(index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetImageXRes ( long index ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetImageXRes(index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetImageYRes ( long index ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetImageYRes(index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::SetHttpFormField ( _bstr_t fieldName, _bstr_t fieldValue ) {
+    long _result = 0;
+    HRESULT _hr = raw_SetHttpFormField(fieldName, fieldValue, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::SetHttpServerParams ( _bstr_t url, _bstr_t referer, long timeout ) {
+    long _result = 0;
+    HRESULT _hr = raw_SetHttpServerParams(url, referer, timeout, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::SetHttpProxyServerParams ( _bstr_t server, int port ) {
+    long _result = 0;
+    HRESULT _hr = raw_SetHttpProxyServerParams(server, port, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::SaveImageToHttp ( long index, _bstr_t fieldName, _bstr_t fileName ) {
+    long _result = 0;
+    HRESULT _hr = raw_SaveImageToHttp(index, fieldName, fileName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline short IVintaSoftTwain::GethttpState ( ) {
+    short _result = 0;
+    HRESULT _hr = get_httpState(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IVintaSoftTwain::GethttpStateString ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_httpStateString(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IVintaSoftTwain::GethttpBytesTotal ( ) {
+    long _result = 0;
+    HRESULT _hr = get_httpBytesTotal(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GethttpBytesUploaded ( ) {
+    long _result = 0;
+    HRESULT _hr = get_httpBytesUploaded(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline short IVintaSoftTwain::GethttpErrorCode ( ) {
+    short _result = 0;
+    HRESULT _hr = get_httpErrorCode(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IVintaSoftTwain::GethttpErrorString ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_httpErrorString(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IVintaSoftTwain::PuthttpCancel ( long _arg1 ) {
+    HRESULT _hr = put_httpCancel(_arg1);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IVintaSoftTwain::GetappProductName ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_appProductName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IVintaSoftTwain::PutappProductName ( _bstr_t pVal ) {
+    HRESULT _hr = put_appProductName(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IVintaSoftTwain::GethttpResponseString ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_httpResponseString(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IVintaSoftTwain::GetcancelTransfer ( ) {
+    long _result = 0;
+    HRESULT _hr = get_cancelTransfer(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutcancelTransfer ( long pVal ) {
+    HRESULT _hr = put_cancelTransfer(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::SetHttpFileFromDisk ( _bstr_t filePath ) {
+    long _result = 0;
+    HRESULT _hr = raw_SetHttpFileFromDisk(filePath, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _variant_t IVintaSoftTwain::GetImageAsDIB ( long index ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_GetImageAsDIB(index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long IVintaSoftTwain::GethttpResponseCode ( ) {
+    long _result = 0;
+    HRESULT _hr = get_httpResponseCode(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::AcquireModal ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_AcquireModal(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum enumTransferMode IVintaSoftTwain::GettransferMode ( ) {
+    enum enumTransferMode _result;
+    HRESULT _hr = get_transferMode(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PuttransferMode ( enum enumTransferMode pVal ) {
+    HRESULT _hr = put_transferMode(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline float IVintaSoftTwain::GetnoiseLevelInBlankImage ( ) {
+    float _result = 0;
+    HRESULT _hr = get_noiseLevelInBlankImage(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutnoiseLevelInBlankImage ( float pVal ) {
+    HRESULT _hr = put_noiseLevelInBlankImage(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::DeleteImage ( long index ) {
+    long _result = 0;
+    HRESULT _hr = raw_DeleteImage(index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::GetImageAsHDIB ( long index ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetImageAsHDIB(index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::DespeckleImage ( long index, int level1, int level2, int radius, int level3 ) {
+    long _result = 0;
+    HRESULT _hr = raw_DespeckleImage(index, level1, level2, radius, level3, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::DetectImageBorder ( long index, int borderSize ) {
+    long _result = 0;
+    HRESULT _hr = raw_DetectImageBorder(index, borderSize, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::RotateImage ( long index, long rotationAngle ) {
+    long _result = 0;
+    HRESULT _hr = raw_RotateImage(index, rotationAngle, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVintaSoftTwain::SetupSource ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_SetupSource(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IVintaSoftTwain::GetfileName ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_fileName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IVintaSoftTwain::PutfileName ( _bstr_t pVal ) {
+    HRESULT _hr = put_fileName(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline enum enumFileFormat IVintaSoftTwain::GetfileFormat ( ) {
+    enum enumFileFormat _result;
+    HRESULT _hr = get_fileFormat(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVintaSoftTwain::PutfileFormat ( enum enumFileFormat pVal ) {
+    HRESULT _hr = put_fileFormat(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVintaSoftTwain::SetHttpCookie ( _bstr_t cookieValue ) {
+    long _result = 0;
+    HRESULT _hr = raw_SetHttpCookie(cookieValue, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}

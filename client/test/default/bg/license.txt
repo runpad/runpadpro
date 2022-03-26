@@ -1,0 +1,49 @@
+--------------------------------------
+1. License (non-exclusive) for:
+
+"PIC02.JPG", "VID02.WMV"
+"PIC03.JPG", "VID03.WMV"
+"PIC04.JPG", "VID04.WMV"
+"PIC06.JPG", "VID06.WMV"
+"PIC08.JPG", "VID08.WMV"
+
+- "Sergey Shamshyn (author of Runpad Pro)" is granted the use, 
+but not ownership of, the video and picture material for their use 
+in commercial purposes. All rights to the original 
+video material are owned and reserved by www.dreamscene.org
+
+- You may not sell, sublicense, give or transfer the original video 
+material or a copy thereof to another person or company.
+
+2. "PIC07.JPG", "PIC09.JPG", "VID07.WMV", "VID09.WMV" are NOT licensed for use in commercial purposes!
+So, you MUST DELETE these files as soon as possible after their test preview.
+
+3. "PIC01.JPG", "PIC05.JPG", "VID01.WMV" can be freely redistributed and used for any purposes.
+
+4. "VP_VOXEL.DLL" is based on the Alex Chalfin's "heightfield voxel engine".
+
+--------------------------------------
+1. Лицензия (общего характера) для:
+
+"PIC02.JPG", "VID02.WMV"
+"PIC03.JPG", "VID03.WMV"
+"PIC04.JPG", "VID04.WMV"
+"PIC06.JPG", "VID06.WMV"
+"PIC08.JPG", "VID08.WMV"
+
+- "Шамшин С.В. (автор Runpad Pro)" может использовать (без предоставления права владения) 
+эти видео и статические материалы в своих коммерческих целях. 
+Все права на оригинальные видео материалы принадлежат www.dreamscene.org
+
+- Вы не можете продавать, саблицензировать или изменять оригинальные видеоматериалы
+или их копии для других лиц.
+
+2. "PIC07.JPG", "PIC09.JPG", "VID07.WMV", "VID09.WMV" не лицензированы для использования в коммерческих целях.
+Вы должны НЕМЕДЛЕННО УДАЛИТЬ эти файлы после тестового просмотра!
+
+3. "PIC01.JPG", "PIC05.JPG", "VID01.WMV" могут быть свободно использованы в любых целях.
+
+4. "VP_VOXEL.DLL" базируется на основе "heightfield voxel engine" от Alex Chalfin.
+                                                                            
+--------------------------------------
+

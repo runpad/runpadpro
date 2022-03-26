@@ -1,0 +1,8 @@
+
+#include <windows.h>
+
+
+101 ICON "icon.ico"
+
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "rsspoolcleaner.exe.manifest"
+

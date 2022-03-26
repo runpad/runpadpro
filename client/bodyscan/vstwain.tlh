@@ -1,0 +1,888 @@
+// Created by Microsoft (R) C/C++ Compiler Version 13.10.3077 (e9c3fd8d).
+//
+// c:\vstwain.tlh
+//
+// C++ source equivalent of Win32 type library vstwain.dll
+// compiler-generated file created 09/09/07 at 13:18:10 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace VSTWAINLib {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("1169e0c0-9e76-11d7-b1d8-fb63945de96d"))
+/* LIBID */ __VSTWAINLib;
+struct __declspec(uuid("1169e0ce-9e76-11d7-b1d8-fb63945de96d"))
+/* dispinterface */ _IVintaSoftTwainEvents;
+struct /* coclass */ VintaSoftTwain;
+struct __declspec(uuid("1169e0cc-9e76-11d7-b1d8-fb63945de96d"))
+/* dual interface */ IVintaSoftTwain;
+enum enumUnitOfMeasure;
+enum enumPixelType;
+enum enumTiffCompression;
+enum enumCapType;
+enum enumTransferMode;
+enum enumFileFormat;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(_IVintaSoftTwainEvents, __uuidof(_IVintaSoftTwainEvents));
+_COM_SMARTPTR_TYPEDEF(IVintaSoftTwain, __uuidof(IVintaSoftTwain));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("1169e0ce-9e76-11d7-b1d8-fb63945de96d"))
+_IVintaSoftTwainEvents : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT PostScan (
+        long flag );
+};
+
+struct __declspec(uuid("1169e0cd-9e76-11d7-b1d8-fb63945de96d"))
+VintaSoftTwain;
+    // [ default ] interface IVintaSoftTwain
+    // [ default, source ] dispinterface _IVintaSoftTwainEvents
+
+enum enumUnitOfMeasure
+{
+    Inches = 0,
+    Centimeters = 1,
+    Picas = 2,
+    Points = 3,
+    Twips = 4,
+    Pixels = 5
+};
+
+enum enumPixelType
+{
+    BW = 0,
+    Gray = 1,
+    RGB = 2,
+    Palette = 3,
+    CMY = 4,
+    CMYK = 5,
+    YUV = 6,
+    YUVK = 7
+};
+
+enum enumTiffCompression
+{
+    None = 0,
+    Packbits = 1,
+    CCITT_Rle = 2,
+    CCITT_Group3Fax = 3,
+    CCITT_Group4Fax = 4,
+    LZW = 5,
+    Auto = 6
+};
+
+enum enumCapType
+{
+    OneValue = 1,
+    Array = 2,
+    Range = 3,
+    Enum = 4
+};
+
+enum enumTransferMode
+{
+    Native = 0,
+    Memory = 1,
+    File = 2
+};
+
+enum enumFileFormat
+{
+    Tiff = 0,
+    Pict = 1,
+    Bmp = 2,
+    XBM = 3,
+    Jpeg = 4,
+    FlashPix = 5,
+    TiffMulti = 6,
+    Png = 7,
+    SPIFF = 8,
+    EXIF = 9
+};
+
+struct __declspec(uuid("1169e0cc-9e76-11d7-b1d8-fb63945de96d"))
+IVintaSoftTwain : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetfileName,put=PutfileName))
+    _bstr_t fileName;
+    __declspec(property(get=GetfileFormat,put=PutfileFormat))
+    enum enumFileFormat fileFormat;
+    __declspec(property(get=GetdisableAfterAcquire,put=PutdisableAfterAcquire))
+    long disableAfterAcquire;
+    __declspec(property(get=GetshowUI,put=PutshowUI))
+    long showUI;
+    __declspec(property(get=GetautoCleanBuffer,put=PutautoCleanBuffer))
+    long autoCleanBuffer;
+    __declspec(property(get=GetsourcesCount))
+    long sourcesCount;
+    __declspec(property(get=GetsourceIndex,put=PutsourceIndex))
+    long sourceIndex;
+    __declspec(property(get=GetmaxImages,put=PutmaxImages))
+    long maxImages;
+    __declspec(property(get=GetnumImages))
+    long numImages;
+    __declspec(property(get=GeterrorCode))
+    long errorCode;
+    __declspec(property(get=GeterrorString))
+    _bstr_t errorString;
+    __declspec(property(get=GetjpegQuality,put=PutjpegQuality))
+    int jpegQuality;
+    __declspec(property(get=GetxferCount,put=PutxferCount))
+    long xferCount;
+    __declspec(property(get=GetfeederPresent))
+    long feederPresent;
+    __declspec(property(get=GetfeederEnabled,put=PutfeederEnabled))
+    long feederEnabled;
+    __declspec(property(get=GetfeederLoaded))
+    long feederLoaded;
+    __declspec(property(get=GetautoFeed,put=PutautoFeed))
+    long autoFeed;
+    __declspec(property(get=GetpaperDetectable))
+    long paperDetectable;
+    __declspec(property(get=Getresolution,put=Putresolution))
+    long resolution;
+    __declspec(property(get=GetunitOfMeasure,put=PutunitOfMeasure))
+    enum enumUnitOfMeasure unitOfMeasure;
+    __declspec(property(get=GetpixelType,put=PutpixelType))
+    enum enumPixelType pixelType;
+    __declspec(property(get=GetmodalUI,put=PutmodalUI))
+    long modalUI;
+    __declspec(property(get=GetpageSize,put=PutpageSize))
+    long pageSize;
+    __declspec(property(get=Getbrightness,put=Putbrightness))
+    float brightness;
+    __declspec(property(get=GetbrightnessMinValue))
+    float brightnessMinValue;
+    __declspec(property(get=GetbrightnessMaxValue))
+    float brightnessMaxValue;
+    __declspec(property(get=GetautoBright,put=PutautoBright))
+    long autoBright;
+    __declspec(property(get=Getcontrast,put=Putcontrast))
+    float contrast;
+    __declspec(property(get=GetcontrastMinValue))
+    float contrastMinValue;
+    __declspec(property(get=GetcontrastMaxValue))
+    float contrastMaxValue;
+    __declspec(property(get=GettiffCompression,put=PuttiffCompression))
+    enum enumTiffCompression tiffCompression;
+    __declspec(property(get=GettiffMultiPage,put=PuttiffMultiPage))
+    long tiffMultiPage;
+    __declspec(property(get=GetftpState))
+    short ftpState;
+    __declspec(property(get=GetftpStateString))
+    _bstr_t ftpStateString;
+    __declspec(property(get=GetftpBytesTotal))
+    long ftpBytesTotal;
+    __declspec(property(get=GetftpBytesUploaded))
+    long ftpBytesUploaded;
+    __declspec(property(get=GetftpErrorCode))
+    short ftpErrorCode;
+    __declspec(property(get=GetftpErrorString))
+    _bstr_t ftpErrorString;
+    __declspec(property(put=PutftpCancel))
+    long ftpCancel;
+    __declspec(property(get=GetdataSourceState))
+    long dataSourceState;
+    __declspec(property(get=GetpixelFlavor,put=PutpixelFlavor))
+    long pixelFlavor;
+    __declspec(property(get=Getduplex))
+    long duplex;
+    __declspec(property(get=GetduplexEnabled,put=PutduplexEnabled))
+    long duplexEnabled;
+    __declspec(property(get=GetendOfJob))
+    long endOfJob;
+    __declspec(property(get=Getcapability,put=Putcapability))
+    long capability;
+    __declspec(property(get=GetcapType,put=PutcapType))
+    enum enumCapType capType;
+    __declspec(property(get=GetcapValue,put=PutcapValue))
+    float capValue;
+    __declspec(property(get=GetcapStringValue,put=PutcapStringValue))
+    _bstr_t capStringValue;
+    __declspec(property(get=GetcapDefValue))
+    float capDefValue;
+    __declspec(property(get=GetcapMinValue,put=PutcapMinValue))
+    float capMinValue;
+    __declspec(property(get=GetcapMaxValue,put=PutcapMaxValue))
+    float capMaxValue;
+    __declspec(property(get=GetcapStepSize))
+    long capStepSize;
+    __declspec(property(get=GetcapNumItems,put=PutcapNumItems))
+    long capNumItems;
+    __declspec(property(get=GetcapItems,put=PutcapItems))
+    _variant_t capItems;
+    __declspec(property(get=GethttpState))
+    short httpState;
+    __declspec(property(get=GethttpStateString))
+    _bstr_t httpStateString;
+    __declspec(property(get=GethttpBytesTotal))
+    long httpBytesTotal;
+    __declspec(property(get=GethttpBytesUploaded))
+    long httpBytesUploaded;
+    __declspec(property(get=GethttpErrorCode))
+    short httpErrorCode;
+    __declspec(property(get=GethttpErrorString))
+    _bstr_t httpErrorString;
+    __declspec(property(put=PuthttpCancel))
+    long httpCancel;
+    __declspec(property(get=GetappProductName,put=PutappProductName))
+    _bstr_t appProductName;
+    __declspec(property(get=GethttpResponseString))
+    _bstr_t httpResponseString;
+    __declspec(property(get=GetcancelTransfer,put=PutcancelTransfer))
+    long cancelTransfer;
+    __declspec(property(get=GethttpResponseCode))
+    long httpResponseCode;
+    __declspec(property(get=GettransferMode,put=PuttransferMode))
+    enum enumTransferMode transferMode;
+    __declspec(property(get=GetnoiseLevelInBlankImage,put=PutnoiseLevelInBlankImage))
+    float noiseLevelInBlankImage;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long StartDevice ( );
+    HRESULT StopDevice ( );
+    long SelectSource ( );
+    _bstr_t GetSourceProductName (
+        long index );
+    long Acquire ( );
+    IPictureDisp * GetImage (
+        long index );
+    IPictureDisp * GetCurrentImage ( );
+    long GetImageAsHBitmap (
+        long index );
+    long GetCurrentImageAsHBitmap ( );
+    long Register (
+        _bstr_t user,
+        _bstr_t email,
+        _bstr_t regCode );
+    long GetdisableAfterAcquire ( );
+    void PutdisableAfterAcquire (
+        long pVal );
+    long GetshowUI ( );
+    void PutshowUI (
+        long pVal );
+    long GetautoCleanBuffer ( );
+    void PutautoCleanBuffer (
+        long pVal );
+    long GetsourcesCount ( );
+    long GetsourceIndex ( );
+    void PutsourceIndex (
+        long pVal );
+    long GetmaxImages ( );
+    void PutmaxImages (
+        long pVal );
+    long GetnumImages ( );
+    long GeterrorCode ( );
+    _bstr_t GeterrorString ( );
+    long SaveImage (
+        long index,
+        _bstr_t path );
+    int GetjpegQuality ( );
+    void PutjpegQuality (
+        int pVal );
+    long OpenDataSource ( );
+    long CloseDataSource ( );
+    long GetxferCount ( );
+    void PutxferCount (
+        long pVal );
+    long GetfeederPresent ( );
+    long GetfeederEnabled ( );
+    void PutfeederEnabled (
+        long pVal );
+    long GetfeederLoaded ( );
+    long GetautoFeed ( );
+    void PutautoFeed (
+        long pVal );
+    long GetpaperDetectable ( );
+    long SetFtpServerParams (
+        _bstr_t host,
+        int port,
+        _bstr_t user,
+        _bstr_t password,
+        _bstr_t account );
+    HRESULT SetFtpServerAdvParams (
+        long passiveMode,
+        long timeout );
+    long SetFtpProxyServerParams (
+        int proxyType,
+        _bstr_t host,
+        int port,
+        _bstr_t user,
+        _bstr_t password );
+    long SaveImageToFtp (
+        long index,
+        _bstr_t serverPath );
+    long Getresolution ( );
+    void Putresolution (
+        long pVal );
+    _variant_t GetResolutions ( );
+    enum enumUnitOfMeasure GetunitOfMeasure ( );
+    void PutunitOfMeasure (
+        enum enumUnitOfMeasure pVal );
+    _variant_t GetUnitsOfMeasure ( );
+    enum enumPixelType GetpixelType ( );
+    void PutpixelType (
+        enum enumPixelType pVal );
+    _variant_t GetPixelTypes ( );
+    long GetmodalUI ( );
+    void PutmodalUI (
+        long pVal );
+    long GetImageLayout (
+        float * left,
+        float * top,
+        float * right,
+        float * bottom );
+    long SetImageLayout (
+        float left,
+        float top,
+        float right,
+        float bottom );
+    long GetpageSize ( );
+    void PutpageSize (
+        long pVal );
+    _variant_t GetPageSizes ( );
+    float Getbrightness ( );
+    void Putbrightness (
+        float pVal );
+    float GetbrightnessMinValue ( );
+    float GetbrightnessMaxValue ( );
+    long GetautoBright ( );
+    void PutautoBright (
+        long pVal );
+    float Getcontrast ( );
+    void Putcontrast (
+        float pVal );
+    float GetcontrastMinValue ( );
+    float GetcontrastMaxValue ( );
+    enum enumTiffCompression GettiffCompression ( );
+    void PuttiffCompression (
+        enum enumTiffCompression pVal );
+    long GettiffMultiPage ( );
+    void PuttiffMultiPage (
+        long pVal );
+    short GetftpState ( );
+    _bstr_t GetftpStateString ( );
+    long GetftpBytesTotal ( );
+    long GetftpBytesUploaded ( );
+    short GetftpErrorCode ( );
+    _bstr_t GetftpErrorString ( );
+    void PutftpCancel (
+        long _arg1 );
+    long GetdataSourceState ( );
+    long GetpixelFlavor ( );
+    void PutpixelFlavor (
+        long pVal );
+    long Getduplex ( );
+    long GetduplexEnabled ( );
+    void PutduplexEnabled (
+        long pVal );
+    _variant_t GetImageAsByteArray (
+        long index );
+    long GetendOfJob ( );
+    long Getcapability ( );
+    void Putcapability (
+        long pVal );
+    long IsCapSupported ( );
+    enum enumCapType GetcapType ( );
+    void PutcapType (
+        enum enumCapType pVal );
+    float GetcapValue ( );
+    void PutcapValue (
+        float pVal );
+    _bstr_t GetcapStringValue ( );
+    void PutcapStringValue (
+        _bstr_t pVal );
+    float GetcapDefValue ( );
+    float GetcapMinValue ( );
+    void PutcapMinValue (
+        float pVal );
+    float GetcapMaxValue ( );
+    void PutcapMaxValue (
+        float pVal );
+    long GetcapStepSize ( );
+    long GetcapNumItems ( );
+    void PutcapNumItems (
+        long pVal );
+    _variant_t GetcapItems ( );
+    void PutcapItems (
+        const _variant_t & pVal );
+    long GetCap ( );
+    long SetCap ( );
+    long IsBlankImage (
+        long index );
+    long GetImageWidth (
+        long index );
+    long GetImageHeight (
+        long index );
+    long GetImageBPP (
+        long index );
+    long GetImageXRes (
+        long index );
+    long GetImageYRes (
+        long index );
+    long SetHttpFormField (
+        _bstr_t fieldName,
+        _bstr_t fieldValue );
+    long SetHttpServerParams (
+        _bstr_t url,
+        _bstr_t referer,
+        long timeout );
+    long SetHttpProxyServerParams (
+        _bstr_t server,
+        int port );
+    long SaveImageToHttp (
+        long index,
+        _bstr_t fieldName,
+        _bstr_t fileName );
+    short GethttpState ( );
+    _bstr_t GethttpStateString ( );
+    long GethttpBytesTotal ( );
+    long GethttpBytesUploaded ( );
+    short GethttpErrorCode ( );
+    _bstr_t GethttpErrorString ( );
+    void PuthttpCancel (
+        long _arg1 );
+    _bstr_t GetappProductName ( );
+    void PutappProductName (
+        _bstr_t pVal );
+    _bstr_t GethttpResponseString ( );
+    long GetcancelTransfer ( );
+    void PutcancelTransfer (
+        long pVal );
+    long SetHttpFileFromDisk (
+        _bstr_t filePath );
+    _variant_t GetImageAsDIB (
+        long index );
+    long GethttpResponseCode ( );
+    long AcquireModal ( );
+    enum enumTransferMode GettransferMode ( );
+    void PuttransferMode (
+        enum enumTransferMode pVal );
+    float GetnoiseLevelInBlankImage ( );
+    void PutnoiseLevelInBlankImage (
+        float pVal );
+    long DeleteImage (
+        long index );
+    long GetImageAsHDIB (
+        long index );
+    long DespeckleImage (
+        long index,
+        int level1,
+        int level2,
+        int radius,
+        int level3 );
+    long DetectImageBorder (
+        long index,
+        int borderSize );
+    long RotateImage (
+        long index,
+        long rotationAngle );
+    long SetupSource ( );
+    _bstr_t GetfileName ( );
+    void PutfileName (
+        _bstr_t pVal );
+    enum enumFileFormat GetfileFormat ( );
+    void PutfileFormat (
+        enum enumFileFormat pVal );
+    long SetHttpCookie (
+        _bstr_t cookieValue );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_StartDevice (
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_StopDevice ( ) = 0;
+      virtual HRESULT __stdcall raw_SelectSource (
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetSourceProductName (
+        /*[in]*/ long index,
+        /*[out,retval]*/ BSTR * name ) = 0;
+      virtual HRESULT __stdcall raw_Acquire (
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetImage (
+        /*[in]*/ long index,
+        /*[out,retval]*/ IPictureDisp * * Picture ) = 0;
+      virtual HRESULT __stdcall raw_GetCurrentImage (
+        /*[out,retval]*/ IPictureDisp * * Picture ) = 0;
+      virtual HRESULT __stdcall raw_GetImageAsHBitmap (
+        /*[in]*/ long index,
+        /*[out,retval]*/ long * hBitmap ) = 0;
+      virtual HRESULT __stdcall raw_GetCurrentImageAsHBitmap (
+        /*[out,retval]*/ long * hBitmap ) = 0;
+      virtual HRESULT __stdcall raw_Register (
+        /*[in]*/ BSTR user,
+        /*[in]*/ BSTR email,
+        /*[in]*/ BSTR regCode,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall get_disableAfterAcquire (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_disableAfterAcquire (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_showUI (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_showUI (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_autoCleanBuffer (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_autoCleanBuffer (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_sourcesCount (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_sourceIndex (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_sourceIndex (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_maxImages (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_maxImages (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_numImages (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_errorCode (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_errorString (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall raw_SaveImage (
+        /*[in]*/ long index,
+        /*[in]*/ BSTR path,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall get_jpegQuality (
+        /*[out,retval]*/ int * pVal ) = 0;
+      virtual HRESULT __stdcall put_jpegQuality (
+        /*[in]*/ int pVal ) = 0;
+      virtual HRESULT __stdcall raw_OpenDataSource (
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_CloseDataSource (
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall get_xferCount (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_xferCount (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_feederPresent (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_feederEnabled (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_feederEnabled (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_feederLoaded (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_autoFeed (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_autoFeed (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_paperDetectable (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall raw_SetFtpServerParams (
+        /*[in]*/ BSTR host,
+        /*[in]*/ int port,
+        /*[in]*/ BSTR user,
+        /*[in]*/ BSTR password,
+        /*[in]*/ BSTR account,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SetFtpServerAdvParams (
+        /*[in]*/ long passiveMode,
+        /*[in]*/ long timeout ) = 0;
+      virtual HRESULT __stdcall raw_SetFtpProxyServerParams (
+        /*[in]*/ int proxyType,
+        /*[in]*/ BSTR host,
+        /*[in]*/ int port,
+        /*[in]*/ BSTR user,
+        /*[in]*/ BSTR password,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SaveImageToFtp (
+        /*[in]*/ long index,
+        /*[in]*/ BSTR serverPath,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall get_resolution (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_resolution (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall raw_GetResolutions (
+        /*[out,retval]*/ VARIANT * pArray ) = 0;
+      virtual HRESULT __stdcall get_unitOfMeasure (
+        /*[out,retval]*/ enum enumUnitOfMeasure * pVal ) = 0;
+      virtual HRESULT __stdcall put_unitOfMeasure (
+        /*[in]*/ enum enumUnitOfMeasure pVal ) = 0;
+      virtual HRESULT __stdcall raw_GetUnitsOfMeasure (
+        /*[out,retval]*/ VARIANT * pArray ) = 0;
+      virtual HRESULT __stdcall get_pixelType (
+        /*[out,retval]*/ enum enumPixelType * pVal ) = 0;
+      virtual HRESULT __stdcall put_pixelType (
+        /*[in]*/ enum enumPixelType pVal ) = 0;
+      virtual HRESULT __stdcall raw_GetPixelTypes (
+        /*[out,retval]*/ VARIANT * pArray ) = 0;
+      virtual HRESULT __stdcall get_modalUI (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_modalUI (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall raw_GetImageLayout (
+        /*[out]*/ float * left,
+        /*[out]*/ float * top,
+        /*[out]*/ float * right,
+        /*[out]*/ float * bottom,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SetImageLayout (
+        /*[in]*/ float left,
+        /*[in]*/ float top,
+        /*[in]*/ float right,
+        /*[in]*/ float bottom,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall get_pageSize (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_pageSize (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall raw_GetPageSizes (
+        /*[out,retval]*/ VARIANT * pArray ) = 0;
+      virtual HRESULT __stdcall get_brightness (
+        /*[out,retval]*/ float * pVal ) = 0;
+      virtual HRESULT __stdcall put_brightness (
+        /*[in]*/ float pVal ) = 0;
+      virtual HRESULT __stdcall get_brightnessMinValue (
+        /*[out,retval]*/ float * pVal ) = 0;
+      virtual HRESULT __stdcall get_brightnessMaxValue (
+        /*[out,retval]*/ float * pVal ) = 0;
+      virtual HRESULT __stdcall get_autoBright (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_autoBright (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_contrast (
+        /*[out,retval]*/ float * pVal ) = 0;
+      virtual HRESULT __stdcall put_contrast (
+        /*[in]*/ float pVal ) = 0;
+      virtual HRESULT __stdcall get_contrastMinValue (
+        /*[out,retval]*/ float * pVal ) = 0;
+      virtual HRESULT __stdcall get_contrastMaxValue (
+        /*[out,retval]*/ float * pVal ) = 0;
+      virtual HRESULT __stdcall get_tiffCompression (
+        /*[out,retval]*/ enum enumTiffCompression * pVal ) = 0;
+      virtual HRESULT __stdcall put_tiffCompression (
+        /*[in]*/ enum enumTiffCompression pVal ) = 0;
+      virtual HRESULT __stdcall get_tiffMultiPage (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_tiffMultiPage (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_ftpState (
+        /*[out,retval]*/ short * pVal ) = 0;
+      virtual HRESULT __stdcall get_ftpStateString (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall get_ftpBytesTotal (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_ftpBytesUploaded (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_ftpErrorCode (
+        /*[out,retval]*/ short * pVal ) = 0;
+      virtual HRESULT __stdcall get_ftpErrorString (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_ftpCancel (
+        /*[in]*/ long _arg1 ) = 0;
+      virtual HRESULT __stdcall get_dataSourceState (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_pixelFlavor (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_pixelFlavor (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_duplex (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_duplexEnabled (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_duplexEnabled (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall raw_GetImageAsByteArray (
+        /*[in]*/ long index,
+        /*[out,retval]*/ VARIANT * pArray ) = 0;
+      virtual HRESULT __stdcall get_endOfJob (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_capability (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_capability (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall raw_IsCapSupported (
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall get_capType (
+        /*[out,retval]*/ enum enumCapType * pVal ) = 0;
+      virtual HRESULT __stdcall put_capType (
+        /*[in]*/ enum enumCapType pVal ) = 0;
+      virtual HRESULT __stdcall get_capValue (
+        /*[out,retval]*/ float * pVal ) = 0;
+      virtual HRESULT __stdcall put_capValue (
+        /*[in]*/ float pVal ) = 0;
+      virtual HRESULT __stdcall get_capStringValue (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_capStringValue (
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall get_capDefValue (
+        /*[out,retval]*/ float * pVal ) = 0;
+      virtual HRESULT __stdcall get_capMinValue (
+        /*[out,retval]*/ float * pVal ) = 0;
+      virtual HRESULT __stdcall put_capMinValue (
+        /*[in]*/ float pVal ) = 0;
+      virtual HRESULT __stdcall get_capMaxValue (
+        /*[out,retval]*/ float * pVal ) = 0;
+      virtual HRESULT __stdcall put_capMaxValue (
+        /*[in]*/ float pVal ) = 0;
+      virtual HRESULT __stdcall get_capStepSize (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_capNumItems (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_capNumItems (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall get_capItems (
+        /*[out,retval]*/ VARIANT * pVal ) = 0;
+      virtual HRESULT __stdcall put_capItems (
+        /*[in]*/ VARIANT pVal ) = 0;
+      virtual HRESULT __stdcall raw_GetCap (
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SetCap (
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_IsBlankImage (
+        /*[in]*/ long index,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetImageWidth (
+        /*[in]*/ long index,
+        /*[out,retval]*/ long * val ) = 0;
+      virtual HRESULT __stdcall raw_GetImageHeight (
+        /*[in]*/ long index,
+        /*[out,retval]*/ long * val ) = 0;
+      virtual HRESULT __stdcall raw_GetImageBPP (
+        /*[in]*/ long index,
+        /*[out,retval]*/ long * val ) = 0;
+      virtual HRESULT __stdcall raw_GetImageXRes (
+        /*[in]*/ long index,
+        /*[out,retval]*/ long * val ) = 0;
+      virtual HRESULT __stdcall raw_GetImageYRes (
+        /*[in]*/ long index,
+        /*[out,retval]*/ long * val ) = 0;
+      virtual HRESULT __stdcall raw_SetHttpFormField (
+        /*[in]*/ BSTR fieldName,
+        /*[in]*/ BSTR fieldValue,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SetHttpServerParams (
+        /*[in]*/ BSTR url,
+        /*[in]*/ BSTR referer,
+        /*[in]*/ long timeout,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SetHttpProxyServerParams (
+        /*[in]*/ BSTR server,
+        /*[in]*/ int port,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SaveImageToHttp (
+        /*[in]*/ long index,
+        /*[in]*/ BSTR fieldName,
+        /*[in]*/ BSTR fileName,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall get_httpState (
+        /*[out,retval]*/ short * pVal ) = 0;
+      virtual HRESULT __stdcall get_httpStateString (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall get_httpBytesTotal (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_httpBytesUploaded (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_httpErrorCode (
+        /*[out,retval]*/ short * pVal ) = 0;
+      virtual HRESULT __stdcall get_httpErrorString (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_httpCancel (
+        /*[in]*/ long _arg1 ) = 0;
+      virtual HRESULT __stdcall get_appProductName (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_appProductName (
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall get_httpResponseString (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall get_cancelTransfer (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_cancelTransfer (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall raw_SetHttpFileFromDisk (
+        /*[in]*/ BSTR filePath,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetImageAsDIB (
+        /*[in]*/ long index,
+        /*[out,retval]*/ VARIANT * pArray ) = 0;
+      virtual HRESULT __stdcall get_httpResponseCode (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall raw_AcquireModal (
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall get_transferMode (
+        /*[out,retval]*/ enum enumTransferMode * pVal ) = 0;
+      virtual HRESULT __stdcall put_transferMode (
+        /*[in]*/ enum enumTransferMode pVal ) = 0;
+      virtual HRESULT __stdcall get_noiseLevelInBlankImage (
+        /*[out,retval]*/ float * pVal ) = 0;
+      virtual HRESULT __stdcall put_noiseLevelInBlankImage (
+        /*[in]*/ float pVal ) = 0;
+      virtual HRESULT __stdcall raw_DeleteImage (
+        /*[in]*/ long index,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_GetImageAsHDIB (
+        /*[in]*/ long index,
+        /*[out,retval]*/ long * hDib ) = 0;
+      virtual HRESULT __stdcall raw_DespeckleImage (
+        /*[in]*/ long index,
+        /*[in]*/ int level1,
+        /*[in]*/ int level2,
+        /*[in]*/ int radius,
+        /*[in]*/ int level3,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_DetectImageBorder (
+        /*[in]*/ long index,
+        /*[in]*/ int borderSize,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_RotateImage (
+        /*[in]*/ long index,
+        /*[in]*/ long rotationAngle,
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall raw_SetupSource (
+        /*[out,retval]*/ long * retVal ) = 0;
+      virtual HRESULT __stdcall get_fileName (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_fileName (
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall get_fileFormat (
+        /*[out,retval]*/ enum enumFileFormat * pVal ) = 0;
+      virtual HRESULT __stdcall put_fileFormat (
+        /*[in]*/ enum enumFileFormat pVal ) = 0;
+      virtual HRESULT __stdcall raw_SetHttpCookie (
+        /*[in]*/ BSTR cookieValue,
+        /*[out,retval]*/ long * retVal ) = 0;
+};
+
+//
+// Wrapper method implementations
+//
+
+#include "vstwain.tli"
+
+} // namespace VSTWAINLib
+
+#pragma pack(pop)

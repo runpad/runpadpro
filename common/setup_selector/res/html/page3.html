@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<link rel="stylesheet" type="text/css" href="center.css">
+<style type="text/css">
+
+.ctable {
+ width: 530px;
+ border: 1px solid;
+ border-color: #E0E0E0;
+}
+
+td.component {
+ height: 25px;
+ cursor: hand; 
+ background: none;
+ font-family: Verdana; 
+ font-weight: normal; 
+ font-size: 10pt;
+ color: #000000;
+ padding-left: 30px;
+}
+
+td.component2 {
+ height: 25px;
+ cursor: arrow; 
+ background: url(check.gif) 7 6 no-repeat;
+ b\ackground-color: #5ABAD0; 
+ background-color: #FBF69E; 
+ font-family: Verdana; 
+ font-weight: bold; 
+ font-size: 10pt;
+ color: #000000;
+ padding-left: 30px;
+}
+
+td.component3 {
+ height: 25px;
+ cursor: hand; 
+ background: none;
+ background-color: #FEFEFE; 
+ font-family: Verdana; 
+ font-weight: normal; 
+ font-size: 10pt;
+ color: #225555;
+ padding-left: 30px;
+}
+
+#dhtmltooltip{
+position: absolute;
+width: 400px;
+border: 1px solid #000000;
+padding: 5px;
+background-color: #FFFFC0;
+color: #000000;
+font-family: Verdana; 
+font-weight: normal; 
+font-size: 7pt;
+visibility: hidden;
+z-index: 100;
+filter: progid:DXImageTransform.Microsoft.Shadow(color=#A0A0A0,direction=135,strength=3);
+}
+
+.help {
+ font-family: Verdana; 
+ font-weight: bold; 
+ font-size: 7pt;
+ color: #000000;
+ cursor: hand;
+}
+
+</style>
+<script language=JavaScript>
+
+function FindEl(id)
+{
+  var el;
+  for ( var n = document.body.sourceIndex; n < document.all.length; n++ )
+      {
+        el = document.all[n];
+        if ( el.id == id )
+           {
+             break;
+           }
+      }
+  return el;
+}
+
+
+var g_selected = -1;
+var g_hovered = -1;
+
+
+var c_names = new Array('Программа администратора',
+                        'Сервер Runpad Pro',
+                        'Клиентская часть с шеллом (и опционально Rollback)',
+                        'Клиентская часть без шелла (только Rollback)',
+                        'Программа оператора');
+
+var c_desc = new Array();
+
+c_desc[0] = '\
+<b>Администраторская часть</b><br>\
+<br>\
+Используйте для установки (и обновления) на машину администратора.<br>\
+Если нет отдельной машины, то можно установить и на машину оператора.<br>\
+<br>\
+Также используется и для <b>обновления</b> клиентских частей (см. справку).<br>\
+';
+
+c_desc[1] = '\
+<b>Сервер Runpad Pro</b><br>\
+<br>\
+Используйте для установки (и обновления) на серверную машину.<br>\
+Если нет отдельной машины, то можно установить и на машину оператора.<br>\
+';
+
+c_desc[2] = '\
+<b>Клиентская часть</b><br>\
+<br>\
+Необходимо установить <b>только одну</b> из двух предлагаемых клиентских частей на клиентские машины.<br>\
+Если вам необходима оболочка (<b>шелл</b>) с или без модуля <b>Rollback</b>, то нужно выбрать эту клиентскую часть для установки.<br>\
+При этом использование <b>Rollback</b> будет зависеть от типа вашей лицензии.<br>\
+Также можно установить <b>шелл</b> и на машину оператора.<br>\
+<br>\
+Для <b>обновления</b> клиентской части выберите <b>"Программа администратора"</b>, а также см. справку<br>\
+';
+
+c_desc[3] = '\
+<b>Клиентская часть</b><br>\
+<br>\
+Необходимо установить <b>только одну</b> из двух предлагаемых клиентских частей на клиентские машины.<br>\
+Если вам не нужна оболочка (<b>шелл</b>), а только модуль <b>Rollback</b>, то нужно выбрать эту клиентскую часть для установки.<br>\
+<br>\
+Для <b>обновления</b> клиентской части выберите <b>"Программа администратора"</b>, а также см. справку<br>\
+';
+
+c_desc[4] = '\
+<b>Операторская часть</b><br>\
+<br>\
+Используйте для установки (и обновления) на машину оператора.<br>\
+';
+
+
+function SetDefFocus()
+{
+  parent.frames['frame_bottom'].SetDefFocus();
+}
+
+
+function SelectCompInternal(idx,state)
+{
+  var el = FindEl('comp'+idx);
+
+  if ( state )
+     {
+       el.className = "component2";
+     }
+  else
+     {
+       if ( g_hovered == idx )
+          el.className = "component3";
+       else
+          el.className = "component";
+     }
+}
+
+
+function HoverCompInternal(idx,state)
+{
+  if ( g_selected != idx )
+     {
+       var el = FindEl('comp'+idx);
+
+       if ( state )
+          {
+            el.className = "component3";
+          }
+       else
+          {
+            el.className = "component";
+          }
+     }
+}
+
+
+function SelectComp(idx)
+{
+  if ( g_selected != idx )
+     {
+       g_selected = idx;
+       
+       for ( var i = 0; i < c_names.length; i++ )
+           {
+             SelectCompInternal(i,idx==i);
+           }
+     }
+
+  SetDefFocus();
+}
+
+function HoverComp(idx)
+{
+  if ( g_hovered != idx )
+     {
+       g_hovered = idx;
+
+       for ( var i = 0; i < c_names.length; i++ )
+           {
+             HoverCompInternal(i,idx==i);
+           }
+     }
+
+  if ( idx == -1 )
+     {
+       hideddrivetip();
+     }
+  else
+     {
+       ddrivetip(c_desc[idx]);
+     }
+}
+
+function OnHelp()
+{
+  SetDefFocus();
+  external.showHelp();
+}
+
+function GetSelectedComp()
+{
+  return g_selected;
+}
+
+</script>
+</head>
+<body marginwidth="0" marginheight="0">
+
+<div id="dhtmltooltip"></div>
+
+<script type="text/javascript">
+
+/***********************************************
+* Cool DHTML tooltip script- c Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+var offsetxpoint=-60 //Customize x offset of tooltip
+var offsetypoint=20 //Customize y offset of tooltip
+var ie=document.all
+var ns6=document.getElementById && !document.all
+var enabletip=false
+if (ie||ns6)
+var tipobj=document.all? document.all["dhtmltooltip"] : document.getElementById? document.getElementById("dhtmltooltip") : ""
+
+function ietruebody(){
+return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+
+function ddrivetip(thetext, thecolor, thewidth){
+if (ns6||ie){
+if (typeof thewidth!="undefined") tipobj.style.width=thewidth+"px"
+if (typeof thecolor!="undefined" && thecolor!="") tipobj.style.backgroundColor=thecolor
+tipobj.innerHTML=thetext
+enabletip=true
+return false
+}
+}
+
+function positiontip(e){
+if (enabletip){
+var curX=(ns6)?e.pageX : event.clientX+ietruebody().scrollLeft;
+var curY=(ns6)?e.pageY : event.clientY+ietruebody().scrollTop;
+//Find out how close the mouse is to the corner of the window
+var rightedge=ie&&!window.opera? ietruebody().clientWidth-event.clientX-offsetxpoint : window.innerWidth-e.clientX-offsetxpoint-20
+var bottomedge=ie&&!window.opera? ietruebody().clientHeight-event.clientY-offsetypoint : window.innerHeight-e.clientY-offsetypoint-20
+
+var leftedge=(offsetxpoint<0)? offsetxpoint*(-1) : -1000
+
+//if the horizontal distance isn't enough to accomodate the width of the context menu
+if (rightedge<tipobj.offsetWidth)
+//move the horizontal position of the menu to the left by it's width
+tipobj.style.left=ie? ietruebody().scrollLeft+event.clientX-tipobj.offsetWidth+"px" : window.pageXOffset+e.clientX-tipobj.offsetWidth+"px"
+else if (curX<leftedge)
+tipobj.style.left="5px"
+else
+//position the horizontal position of the menu where the mouse is positioned
+tipobj.style.left=curX+offsetxpoint+"px"
+
+//same concept with the vertical position
+if (bottomedge<tipobj.offsetHeight)
+tipobj.style.top=ie? ietruebody().scrollTop+event.clientY-tipobj.offsetHeight-offsetypoint+"px" : window.pageYOffset+e.clientY-tipobj.offsetHeight-offsetypoint+"px"
+else
+tipobj.style.top=curY+offsetypoint+"px"
+tipobj.style.visibility="visible"
+}
+}
+
+function hideddrivetip(){
+if (ns6||ie){
+enabletip=false
+tipobj.style.visibility="hidden"
+tipobj.style.left="-1000px"
+tipobj.style.backgroundColor=''
+tipobj.style.width=''
+}
+}
+
+document.onmousemove=positiontip;
+
+</script>
+
+<b>Выберите компонент для установки:</b><br>
+<br>
+<br>
+
+<script language=JavaScript>
+
+var s = '';
+
+for ( var i = 0; i < c_names.length; i++ )
+    {
+      s += '<table cellspacing=0 cellpadding=5 class="ctable">\n';
+      s += '<tr>\n';
+      s += '<td id="comp'+i+'" nowrap align=left valign=middle class="component" onmouseout="HoverComp(-1);" onmouseover="HoverComp('+i+');" onclick="SelectComp('+i+');">'+c_names[i]+'</td>\n';
+      s += '</tr>\n';
+      s += '</table>\n';
+      if ( i != 2 )
+         {
+           s += '<font size=1><br></font>\n';
+         }
+      else
+         {
+           s += '<font style="font-size:2pt;"><br></font>\n';
+         }
+    }
+
+document.writeln(s);
+
+</script>
+
+<div align=right style="position: relative; padding-top: 30px; padding-right: 10px;">
+<span class="help" onclick="javascript:OnHelp();"><u>Инструкция по установке/обновлению</u><img src="help.gif" border=0 width=32 height=32 hspace=10 align=bottom></span>
+</div>
+
+</body>
+</html>

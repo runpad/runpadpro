@@ -1,0 +1,25 @@
+
+100 ICON "res/c_00.ico"
+101 ICON "res/c_01.ico"
+102 ICON "res/c_02.ico"
+103 ICON "res/c_03.ico"
+104 ICON "res/c_04.ico"
+105 ICON "res/c_05.ico"
+106 ICON "res/c_06.ico"
+107 ICON "res/c_07.ico"
+108 ICON "res/c_08.ico"
+109 ICON "res/c_09.ico"
+110 ICON "res/c_10.ico"
+
+120 ICON "res/del.ico"
+121 ICON "res/upload.ico"
+
+130 ICON "res/up.ico"
+131 ICON "res/view.ico"
+132 ICON "res/play.ico"
+133 ICON "res/cart.ico"
+
+140 ICON "res/sound.ico"
+
+
+1 24 "res/bodymobile.exe.manifest"

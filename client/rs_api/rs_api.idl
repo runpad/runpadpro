@@ -1,0 +1,168 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(0CBC0D60-02DB-434d-99C0-003702C65934),
+	helpstring("IRunpadShell Interface"),
+	pointer_default(unique)
+]
+
+interface IRunpadShell : IUnknown {
+
+	typedef enum {
+		RSS_OFF = 0,
+		RSS_TURNEDON = 1,
+		RSS_ACTIVE = 3,
+		RSS_INVALID = -1,
+	} RSHELLSTATE;
+
+	typedef enum {
+		RSM_ADMIN = 0x01,
+		RSM_MONITOR = 0x02,
+		RSM_INPUT = 0x04,
+		RSM_BLOCKED = 0x08,
+	} RSHELLMODE;
+
+	typedef enum {
+		RSF_SHELL = 0,
+		RSF_DESKTOP = 1,
+		RSF_BG = 2,
+		RSF_RULES = 3,
+		RSF_USERFOLDER = 4,
+		RSF_VIPFOLDER = 5,
+	} RSHELLFOLDER;
+
+	typedef enum {
+		RSMSG_DESKTOP = 0,
+		RSMSG_TRAY = 1,
+		RSMSG_STATUS = 2,
+	} RSHELLMESSAGE;
+
+	typedef enum {
+		RSA_SHOWPANEL = 0,
+		RSA_MINIMIZEALLWINDOWS = 1,
+		RSA_KILLALLTASKS = 2,
+		RSA_RESTOREVMODE = 3,
+		RSA_UPDATEDESKTOP = 4,
+		RSA_CLOSECHILDWINDOWS = 5,
+		RSA_SWITCHTOUSERMODE = 6,
+		RSA_TURNMONITORON = 7,
+		RSA_TURNMONITOROFF = 8,
+		RSA_ENDVIPSESSION = 9,
+		RSA_RUNPROGRAMDISABLE = 10,
+		RSA_RUNPROGRAMENABLE = 11,
+		RSA_LOGOFF = 12,
+		RSA_LOGOFFFORCE = 13,
+		RSA_RUNSCREENSAVER = 14,
+		RSA_LANGSELECTDIALOG = 15,
+		RSA_LANGSELECTRUS = 16,
+		RSA_LANGSELECTENG = 17,
+		RSA_CLOSEACTIVESHEET = 20,
+		RSA_SHOWLA = 21,
+	} RSHELLACTION;
+
+	HRESULT  GetShellState([out] RSHELLSTATE *pState);
+	HRESULT  GetShellExecutable([out,size_is(cbPathLen)] LPSTR lpszExePath, [in] DWORD cbPathLen, [out] DWORD *lpdwPID);
+	HRESULT  TurnShell([in] BOOL bNewState);
+	HRESULT  GetShellMode([out] DWORD *lpdwFlags);
+	HRESULT  IsShellOwnedWindow([in] HWND hWnd, [out] BOOL *lpbOwned);
+	HRESULT  GetFolderPath([in] RSHELLFOLDER dwFolderType, [out,size_is(cbPathLen)] LPSTR lpszPath, [in] DWORD cbPathLen);
+	HRESULT  GetMachineNumber([out] DWORD *lpdwNum);
+	HRESULT  GetCurrentSheet([out,size_is(cbNameLen)] LPSTR lpszName, [in] DWORD cbNameLen);
+	HRESULT  EnableSheets([in] LPCSTR lpszName, [in] BOOL bEnable);
+	HRESULT  RegisterClient([in] LPCSTR lpszClientName, [in] LPCSTR lpszClientPath, [in] DWORD dwFlags);
+	HRESULT  ShowInfoMessage([in] LPCSTR lpszText, [in] DWORD dwFlags);
+	HRESULT  DoSingleAction([in] RSHELLACTION dwAction);
+};
+
+
+[
+	object,
+	uuid(548856D7-555A-445B-BDEB-EEE491A14C39),
+	helpstring("IRunpadShell2 Interface"),
+	pointer_default(unique)
+]
+
+interface IRunpadShell2 : IUnknown {
+
+	HRESULT  GetShellState([out] RSHELLSTATE *pState);
+	HRESULT  GetShellExecutable([out,size_is(cbPathLen)] LPSTR lpszExePath, [in] DWORD cbPathLen, [out] DWORD *lpdwPID);
+	HRESULT  TurnShell([in] BOOL bNewState);
+	HRESULT  GetShellMode([out] DWORD *lpdwFlags);
+	HRESULT  IsShellOwnedWindow([in] HWND hWnd, [out] BOOL *lpbOwned);
+	HRESULT  GetFolderPath([in] RSHELLFOLDER dwFolderType, [out,size_is(cbPathLen)] LPSTR lpszPath, [in] DWORD cbPathLen);
+	HRESULT  GetMachineNumber([out] DWORD *lpdwNum);
+	HRESULT  GetCurrentSheet([out,size_is(cbNameLen)] LPSTR lpszName, [in] DWORD cbNameLen);
+	HRESULT  EnableSheets([in] LPCSTR lpszName, [in] BOOL bEnable);
+	HRESULT  RegisterClient([in] LPCSTR lpszClientName, [in] LPCSTR lpszClientPath, [in] DWORD dwFlags);
+	HRESULT  ShowInfoMessage([in] LPCSTR lpszText, [in] DWORD dwFlags);
+	HRESULT  DoSingleAction([in] RSHELLACTION dwAction);
+	HRESULT  VipLogin([in] LPCSTR lpszLogin, [in] LPCSTR lpszPassword, [in] BOOL bWait);
+	HRESULT  VipRegister([in] LPCSTR lpszLogin, [in] LPCSTR lpszPassword, [in] BOOL bWait);
+	HRESULT  VipLogout([in] BOOL bWait);
+};
+
+
+[
+	object,
+	uuid(83C12BF7-FF8F-4619-85CD-9DA77C8D7D5F),
+	helpstring("IRunpadProShell Interface"),
+	pointer_default(unique)
+]
+
+interface IRunpadProShell : IUnknown {
+
+	HRESULT  GetShellPid([out] DWORD *lpdwPID);
+	HRESULT  GetShellMode([out] DWORD *lpdwFlags);
+	HRESULT  IsShellOwnedWindow([in] HWND hWnd, [out] BOOL *lpbOwned);
+	HRESULT  GetFolderPath([in] RSHELLFOLDER dwFolderType, [out,size_is(cbPathLen)] LPSTR lpszPath, [in] DWORD cbPathLen);
+	HRESULT  GetCurrentSheet([out,size_is(cbNameLen)] LPSTR lpszName, [in] DWORD cbNameLen);
+	HRESULT  EnableSheets([in] LPCSTR lpszName, [in] BOOL bEnable);
+	HRESULT  RegisterClient([in] LPCSTR lpszClientName, [in] LPCSTR lpszClientPath, [in] DWORD dwFlags);
+	HRESULT  ShowInfoMessage([in] LPCSTR lpszText, [in] DWORD dwFlags);
+	HRESULT  DoSingleAction([in] RSHELLACTION dwAction);
+	HRESULT  VipLogin([in] LPCSTR lpszLogin, [in] LPCSTR lpszPassword, [in] BOOL bWait);
+	HRESULT  VipRegister([in] LPCSTR lpszLogin, [in] LPCSTR lpszPassword, [in] BOOL bWait);
+	HRESULT  VipLogout([in] BOOL bWait);
+	HRESULT  TempOffShell([in] LPCSTR lpszPasswordMD5, [in] BOOL bShowReminder);
+};
+
+
+[
+	uuid(02988454-DBAC-48b9-A8A2-85AEE4E2486F),
+	version(1.0),
+	helpstring("RS_API 4.0 Type Library")
+]
+library RS_APILib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(D7346301-B73F-4a94-ABE6-234A0D49521D),
+		helpstring("RunpadShell Class")
+	]
+	coclass RunpadShell
+	{
+		[default] interface IRunpadShell;
+	};
+
+	[
+		uuid(D163EEE3-540A-48DA-9009-C194588263B9),
+		helpstring("RunpadShell2 Class")
+	]
+	coclass RunpadShell2
+	{
+		[default] interface IRunpadShell2;
+	};
+
+	[
+		uuid(3D4B9FF0-329A-4ed9-A341-B07AE052B7D6),
+		helpstring("RunpadProShell Class")
+	]
+	coclass RunpadProShell
+	{
+		[default] interface IRunpadProShell;
+	};
+};

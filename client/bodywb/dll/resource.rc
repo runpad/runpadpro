@@ -1,0 +1,22 @@
+
+101 ICON "res/icon1.ico"
+
+200 ICON "res/buttons/New.ico"
+201 ICON "res/buttons/Stop.ico"
+202 ICON "res/buttons/Update.ico"
+203 ICON "res/buttons/Back.ico"
+204 ICON "res/buttons/Forward.ico"
+205 ICON "res/buttons/Print.ico"
+206 ICON "res/buttons/Picture.ico"
+207 ICON "res/buttons/Encoding.ico"
+208 ICON "res/buttons/FontSize.ico"
+209 ICON "res/buttons/Find.ico"
+210 ICON "res/buttons/Save.ico"
+211 ICON "res/buttons/Save As.ico"
+212 ICON "res/buttons/fav1.ico"
+213 ICON "res/buttons/mail.ico"
+214 ICON "res/buttons/zoom.ico"
+
+300 AVI "res/anim.avi"
+
+FAILED.HTM 23 "res/failed.htm"

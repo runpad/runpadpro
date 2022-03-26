@@ -1,0 +1,32 @@
+#pragma code_page(1251)
+
+#include <windows.h>
+#include "resource.h"
+#include "lang.h"
+
+
+
+IDI_ICON     ICON  "res/icon.ico"
+IDI_SETTINGS ICON  "res/settings.ico"
+IDI_EMPTY    ICON  "res/empty.ico"
+IDI_BURN     ICON  "res/burn.ico"
+IDI_BT       ICON  "res/bt.ico"
+IDI_DESKTOP  ICON  "res/screen.ico"
+IDI_WEBCAM   ICON  "res/webcam.ico"
+IDI_GETINFO  ICON  "res/getinfo.ico"
+
+
+
+IDD_NETWAIT DIALOG 0, 0, 210, 58
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION //| WS_SYSMENU
+CAPTION S_NETDATARETRIVAL
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LTEXT           "",IDC_LABEL,54,12,148,8
+    PUSHBUTTON      S_STOP,IDCANCEL,152,36,50,14
+    ICON            IDI_GETINFO,IDC_STATIC,12,6,20,20
+END
+
+
+
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "res/rsoperator.exe.manifest"

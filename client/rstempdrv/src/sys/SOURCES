@@ -1,0 +1,10 @@
+# The sources for the Generic Port I/O device driver:
+
+TARGETNAME=giveio
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+INCLUDES=..\
+
+SOURCES=giveio.c giveio.rc
+

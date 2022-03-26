@@ -1,0 +1,45 @@
+
+     body {
+                MARGIN-LEFT:      15px;
+                MARGIN-RIGHT:     15px;
+                MARGIN-TOP:       15px;
+                MARGIN-BOTTOM:    15px;
+
+                FONT-FAMILY:      Verdana;
+                FONT-SIZE:        8pt;
+                COLOR:            #000000;
+                BACKGROUND-COLOR: #FFFFFF;
+     }
+
+     td {
+                FONT-FAMILY:      Verdana;
+                FONT-SIZE:        8pt;
+     }
+
+     td.title {
+                FONT-FAMILY:      Arial;
+                FONT-WEIGHT:      bold;
+                FONT-SIZE:        14pt;
+     }
+
+     .copy {
+                FONT-SIZE:        7pt;
+     }
+
+     .symbol {
+                FONT-FAMILY:      Symbol;
+                FONT-SIZE:        10pt;
+     }
+
+     a:link {
+                COLOR:            #0000ÑÑ;
+     }
+
+     a:visited {
+                COLOR:            #0000ÑÑ;
+     }
+
+     a:hover {
+                COLOR:            #0000ÑÑ;
+     }
+

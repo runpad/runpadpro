@@ -1,0 +1,6 @@
+body {
+	behavior: url(htc/hover.htc);
+}
+#menu .item .border {
+	/*margin-left: -127px;*/
+}

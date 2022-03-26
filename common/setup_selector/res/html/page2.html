@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<link rel="stylesheet" type="text/css" href="center.css">
+
+<style type="text/css">
+
+.help {
+ font-family: Verdana; 
+ font-weight: bold; 
+ font-size: 7pt;
+ color: #000000;
+ cursor: hand;
+}
+
+</style>
+<script language=JavaScript>
+
+function SetDefFocus()
+{
+  parent.frames['frame_bottom'].SetDefFocus();
+}
+
+
+function OnHelp()
+{
+  SetDefFocus();
+  external.showHelp();
+}
+
+</script>
+</head>
+<body marginwidth="0" marginheight="0">
+<div align=justify>
+
+<br>
+<br>
+<b>Внимание!</b> Установку необходимо производить в соответствии с <b>инструкцией</b>.<br>
+Если Вы уже ознакомлены с ней, то нажмите <b>"Далее"</b>, иначе нажмите <b>F1</b> или иконку <b>"?"</b><br>
+<div align=right style="position: relative; padding-top: 50px; padding-right: 10px;">
+<span class="help" onclick="javascript:OnHelp();"><u>Инструкция по установке/обновлению</u><img src="help.gif" border=0 width=32 height=32 hspace=10 align=bottom></span>
+</div>
+
+</div>
+</body>
+</html>

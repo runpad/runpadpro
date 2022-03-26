@@ -1,0 +1,91 @@
+
+     body {
+                MARGIN-LEFT:      0px;
+                MARGIN-RIGHT:     0px;
+                MARGIN-TOP:       0px;
+                MARGIN-BOTTOM:    0px;
+
+                FONT-FAMILY:      Verdana;
+                FONT-SIZE:        9pt;
+                COLOR:            #000000;
+                BACKGROUND-COLOR: #DCDCDC;
+
+                SCROLLBAR-TRACK-COLOR:      #DCDCDC; 
+                SCROLLBAR-FACE-COLOR:       #D0D0D0; 
+                SCROLLBAR-ARROW-COLOR:      #FFFFFF;
+                SCROLLBAR-SHADOW-COLOR:     #C0C0C0; 
+                SCROLLBAR-DARKSHADOW-COLOR: #C0C0C0; 
+                SCROLLBAR-3DLIGHT-COLOR:    #EEEEEE;
+                SCROLLBAR-HIGHLIGHT-COLOR:  #EEEEEE;
+
+                OVERFLOW: hidden;
+     }
+
+     td {
+                FONT-FAMILY:      Verdana;
+                FONT-SIZE:        8pt;
+     }
+
+     td.title {
+                FONT-FAMILY:      Arial;
+                FONT-SIZE:        14pt;
+                FONT-WEIGHT:      bold;
+                COLOR:            #000000;
+                BACKGROUND-COLOR: #E4E4E4;
+     }
+
+     .machine {
+                FONT-FAMILY:      Arial;
+                FONT-SIZE:        150pt;
+                FONT-WEIGHT:      bold;
+                COLOR:            #B0B0B0;
+     }
+
+     td.data {
+                FONT-FAMILY:      Verdana;
+                FONT-SIZE:        8pt;
+                COLOR:            #000000;
+                BACKGROUND-COLOR: #E0E0E0;
+     }
+
+     td.copy {
+                FONT-FAMILY:      Verdana;
+                FONT-SIZE:        7pt;
+                COLOR:            #606060;
+                BACKGROUND-COLOR: #E0E0E0;
+     }
+
+     .name {
+                FONT-FAMILY:      Verdana;
+                FONT-SIZE:        12pt;
+                FONT-WEIGHT:      bold;
+     }
+
+     a {
+                TEXT-DECORATION:  none;
+     }
+
+     a:link {
+                COLOR:            #303030;
+     }
+
+     a:visited {
+                COLOR:            #303030;
+     }
+
+     a:hover {
+                COLOR:            #505050;
+     }
+
+#global_shader {
+position: absolute;
+left: 0px;
+top: 0px;
+width: 100%;
+height: 100%;
+border: none;
+background: none;
+margin: 0px 0px 0px 0px;
+visibility: hidden;
+z-index: 1001;
+}

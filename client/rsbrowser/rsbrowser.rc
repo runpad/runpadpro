@@ -1,0 +1,7 @@
+
+MAINICON ICON "res/icon.ico"
+
+110 ICON "res/search_big.ico"
+
+
+1 24 "res/rsbrowser.exe.manifest"

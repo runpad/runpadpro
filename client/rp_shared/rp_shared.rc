@@ -1,0 +1,29 @@
+#pragma code_page(1251)
+
+#include <windows.h>
+#include <commctrl.h>
+#include "resource.h"
+#include "lang.h"
+
+
+
+IDI_SAVE                ICON                    "res/Save.ico"
+IDI_OPEN                ICON                    "res/Open.ico"
+
+
+IDD_MESSAGEBOX DIALOGEX 0, 0, 200, 110
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "",IDOK,24,42,50,14
+    PUSHBUTTON      "",IDCANCEL,84,42,50,14
+    ICON            "",IDC_ICOND,6,6,20,20
+    LTEXT           "",IDC_LABEL,36,6,108,8
+    LISTBOX         IDC_COMBO,36,18,108,30,WS_VSCROLL | WS_TABSTOP
+END
+
+
+ID_NEWDOC	RCDATA	"res/new.doc"
+ID_NEWXLS	RCDATA	"res/new.xls"
+ID_NEWTXT	RCDATA	"res/new.txt"

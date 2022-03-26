@@ -1,0 +1,10 @@
+
+#include <windows.h>
+#include "resource.h"
+
+
+
+IDT_NULLIMAGE     RCDATA       "res/nullimage.png"
+IDT_BGIMAGE       RCDATA       "res/bg.jpg"
+
+

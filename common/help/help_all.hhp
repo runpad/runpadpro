@@ -1,0 +1,18 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=help_all.chm
+Contents file=help_all.hhc
+Default Font=Verdana,8,1
+Default Window=Main
+Default topic=intro.html
+Display compile progress=No
+Full-text search=Yes
+Language=0x419 Русский
+Title=Справка Runpad Pro
+
+[WINDOWS]
+Main="Справка Runpad Pro","help_all.hhc",,"intro.html","intro.html",,,,,0x23520,300,0x204c,[0,0,900,700],0x118b0000,,,,,,0
+
+
+[INFOTYPES]
+

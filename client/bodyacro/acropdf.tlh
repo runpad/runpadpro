@@ -1,0 +1,224 @@
+// Created by Microsoft (R) C/C++ Compiler Version 13.10.3077 (93bf8c54).
+//
+// c:\acropdf.tlh
+//
+// C++ source equivalent of Win32 type library acropdf.dll
+// compiler-generated file created 03/27/07 at 18:29:52 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace AcroPDFLib {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("05bfd3f1-6319-4f30-b752-c7a22889bcc4"))
+/* LIBID */ __AcroPDFLib;
+struct __declspec(uuid("e790e1d1-9de8-4853-8ac6-933d4fd9c927"))
+/* dispinterface */ _IAcroAXDocShimEvents;
+struct /* coclass */ AcroPDF;
+struct __declspec(uuid("3b813ce7-7c10-4f84-ad06-9df76d97a9aa"))
+/* dual interface */ IAcroAXDocShim;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(_IAcroAXDocShimEvents, __uuidof(_IAcroAXDocShimEvents));
+_COM_SMARTPTR_TYPEDEF(IAcroAXDocShim, __uuidof(IAcroAXDocShim));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("e790e1d1-9de8-4853-8ac6-933d4fd9c927"))
+_IAcroAXDocShimEvents : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT OnError ( );
+    HRESULT OnMessage ( );
+};
+
+struct __declspec(uuid("ca8a9780-280d-11cf-a24d-444553540000"))
+AcroPDF;
+    // [ default ] interface IAcroAXDocShim
+    // [ default, source ] dispinterface _IAcroAXDocShimEvents
+
+struct __declspec(uuid("3b813ce7-7c10-4f84-ad06-9df76d97a9aa"))
+IAcroAXDocShim : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=Getsrc,put=Putsrc))
+    _bstr_t src;
+    __declspec(property(get=GetmessageHandler,put=PutmessageHandler))
+    _variant_t messageHandler;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t Getsrc ( );
+    void Putsrc (
+        _bstr_t pVal );
+    VARIANT_BOOL LoadFile (
+        _bstr_t fileName );
+    HRESULT setShowToolbar (
+        VARIANT_BOOL On );
+    HRESULT gotoFirstPage ( );
+    HRESULT gotoLastPage ( );
+    HRESULT gotoNextPage ( );
+    HRESULT gotoPreviousPage ( );
+    HRESULT setCurrentPage (
+        long n );
+    HRESULT goForwardStack ( );
+    HRESULT goBackwardStack ( );
+    HRESULT setPageMode (
+        _bstr_t pageMode );
+    HRESULT setLayoutMode (
+        _bstr_t layoutMode );
+    HRESULT setNamedDest (
+        _bstr_t namedDest );
+    HRESULT Print ( );
+    HRESULT printWithDialog ( );
+    HRESULT setZoom (
+        float percent );
+    HRESULT setZoomScroll (
+        float percent,
+        float left,
+        float top );
+    HRESULT setView (
+        _bstr_t viewMode );
+    HRESULT setViewScroll (
+        _bstr_t viewMode,
+        float offset );
+    HRESULT setViewRect (
+        float left,
+        float top,
+        float width,
+        float height );
+    HRESULT printPages (
+        long from,
+        long to );
+    HRESULT printPagesFit (
+        long from,
+        long to,
+        VARIANT_BOOL shrinkToFit );
+    HRESULT printAll ( );
+    HRESULT printAllFit (
+        VARIANT_BOOL shrinkToFit );
+    HRESULT setShowScrollbars (
+        VARIANT_BOOL On );
+    _variant_t GetVersions ( );
+    HRESULT setCurrentHightlight (
+        long a,
+        long b,
+        long c,
+        long d );
+    HRESULT setCurrentHighlight (
+        long a,
+        long b,
+        long c,
+        long d );
+    HRESULT postMessage (
+        const _variant_t & strArray );
+    _variant_t GetmessageHandler ( );
+    void PutmessageHandler (
+        const _variant_t & pVarOut );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_src (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_src (
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall raw_LoadFile (
+        /*[in]*/ BSTR fileName,
+        /*[out,retval]*/ VARIANT_BOOL * ret ) = 0;
+      virtual HRESULT __stdcall raw_setShowToolbar (
+        /*[in]*/ VARIANT_BOOL On ) = 0;
+      virtual HRESULT __stdcall raw_gotoFirstPage ( ) = 0;
+      virtual HRESULT __stdcall raw_gotoLastPage ( ) = 0;
+      virtual HRESULT __stdcall raw_gotoNextPage ( ) = 0;
+      virtual HRESULT __stdcall raw_gotoPreviousPage ( ) = 0;
+      virtual HRESULT __stdcall raw_setCurrentPage (
+        /*[in]*/ long n ) = 0;
+      virtual HRESULT __stdcall raw_goForwardStack ( ) = 0;
+      virtual HRESULT __stdcall raw_goBackwardStack ( ) = 0;
+      virtual HRESULT __stdcall raw_setPageMode (
+        /*[in]*/ BSTR pageMode ) = 0;
+      virtual HRESULT __stdcall raw_setLayoutMode (
+        /*[in]*/ BSTR layoutMode ) = 0;
+      virtual HRESULT __stdcall raw_setNamedDest (
+        /*[in]*/ BSTR namedDest ) = 0;
+      virtual HRESULT __stdcall raw_Print ( ) = 0;
+      virtual HRESULT __stdcall raw_printWithDialog ( ) = 0;
+      virtual HRESULT __stdcall raw_setZoom (
+        /*[in]*/ float percent ) = 0;
+      virtual HRESULT __stdcall raw_setZoomScroll (
+        /*[in]*/ float percent,
+        /*[in]*/ float left,
+        /*[in]*/ float top ) = 0;
+      virtual HRESULT __stdcall raw_setView (
+        /*[in]*/ BSTR viewMode ) = 0;
+      virtual HRESULT __stdcall raw_setViewScroll (
+        /*[in]*/ BSTR viewMode,
+        /*[in]*/ float offset ) = 0;
+      virtual HRESULT __stdcall raw_setViewRect (
+        /*[in]*/ float left,
+        /*[in]*/ float top,
+        /*[in]*/ float width,
+        /*[in]*/ float height ) = 0;
+      virtual HRESULT __stdcall raw_printPages (
+        /*[in]*/ long from,
+        /*[in]*/ long to ) = 0;
+      virtual HRESULT __stdcall raw_printPagesFit (
+        /*[in]*/ long from,
+        /*[in]*/ long to,
+        /*[in]*/ VARIANT_BOOL shrinkToFit ) = 0;
+      virtual HRESULT __stdcall raw_printAll ( ) = 0;
+      virtual HRESULT __stdcall raw_printAllFit (
+        /*[in]*/ VARIANT_BOOL shrinkToFit ) = 0;
+      virtual HRESULT __stdcall raw_setShowScrollbars (
+        /*[in]*/ VARIANT_BOOL On ) = 0;
+      virtual HRESULT __stdcall raw_GetVersions (
+        /*[out,retval]*/ VARIANT * ret ) = 0;
+      virtual HRESULT __stdcall raw_setCurrentHightlight (
+        /*[in]*/ long a,
+        /*[in]*/ long b,
+        /*[in]*/ long c,
+        /*[in]*/ long d ) = 0;
+      virtual HRESULT __stdcall raw_setCurrentHighlight (
+        /*[in]*/ long a,
+        /*[in]*/ long b,
+        /*[in]*/ long c,
+        /*[in]*/ long d ) = 0;
+      virtual HRESULT __stdcall raw_postMessage (
+        /*[in]*/ VARIANT strArray ) = 0;
+      virtual HRESULT __stdcall get_messageHandler (
+        /*[out,retval]*/ VARIANT * pVarOut ) = 0;
+      virtual HRESULT __stdcall put_messageHandler (
+        /*[in]*/ VARIANT pVarOut ) = 0;
+};
+
+//
+// Wrapper method implementations
+//
+
+#include "acropdf.tli"
+
+} // namespace AcroPDFLib
+
+#pragma pack(pop)

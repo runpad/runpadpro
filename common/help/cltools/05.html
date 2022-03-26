@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<link rel="stylesheet" type="text/css" href="../shared/style.css">
+</head>
+<body marginwidth="0" marginheight="0">
+<table width="100%" height="30" border="0" cellspacing="0" cellpadding="5" bgcolor="#E0E0E0">
+<tr><td align="left" valign="middle" class="title">Работа с Bluetooth/IrDA</td></tr></table>
+<br>
+<div align="justify">
+<br>
+
+Есть возможность безопасного приема-передачи файлов через проводник пользователя с использованием технологий Bluetooth/IrDA. 
+Главным образом это можно использовать для мобильных устройств. Необходимо лишь иметь подключенный к компьютеру Bluetooth/IrDA-адаптер с установленными к нему драйверами.<br>
+Также имеется возможность загружать файлы в телефон через машину администратора (см. <a href="../clvars/35.html">здесь</a> и <a href="../clvars/36.html">здесь</a>)<br>
+Утилита шелла для работы с Bluetooth/IrDA поддерживает драйвера Microsoft, BlueSoleil, WidComm, Toshiba.<br>
+Однако, <b>настоятельно рекомендуется использовать драйвера от Microsoft!</b><br>
+О настройке BlueSoleil, WidComm и Microsoft см. ниже:<br>
+<br>
+<img src="usb_bt.jpg" border=0 alt="Пример USB-адаптера Bluetooth от D-Link">
+<br><br>
+<b>Как настроить драйвера BlueSoleil/WidComm?</b><br><br>
+Единственное, что нужно сделать - отключить в этих приложениях стандартные сервисы приема и передачи файлов (ObjectPush), чтобы весь прием и передача шли через шелл, а не стандартные менеджеры.<br>
+<br><br>
+<b>Как установить драйвера Microsoft для WinXP SP2 / Vista / Win7?</b><br><br>
+1) Удалите все предыдущие драйвера и программы Bluetooth, после чего перезагрузите машину<br><br>
+2) Подключите Bluetooth-адаптер и если Windows установит драйвера сама, то пункты 3)-6) выполнять не нужно. Иначе адаптер будет виден в диспетчере устройств как "Неизвестное устройство"<br><br>
+3) Через диспетчер устройств откройте пункт "Свойства" для этого устройства и перейдите на вкладку "Сведения".<br> 
+Там вы увидите код устройства примерно такого вида:<br>
+USB\VID_<b>1311</b>&PID_<b>0021</b>\B7E4090D0B00<br>
+Запомните выделенные жирным два четырехзначных кода.<br><br>
+4) Через блокнот откройте файл c:\windows\inf\bth.inf (папка inf является скрытой!) и найдите там строку "USB Bluetooth Wireless Adapter". В ней после символа "=" вы увидите описание примерно такого вида:<br> 
+BthUsb, USB\Vid_<b>1310</b>&Pid_<b>0001</b><br>
+А теперь замените 1310 на 1311 и 0001 на 0021 в этой строчке. Естественно, это только пример. В вашем случае числа могут быть другими.<br>
+Далее сохраните этот файл и перезагрузите компьютер.<br><br>
+5) Вставьте ваш Bluetooth-адаптер и теперь он уже должен распознаться Windows как "USB Bluetooth Wireless Adapter" в группе "Радиомодули Bluetooth". <br>
+Если этого не произошло, то удалите в диспетчере устройств устройство и нажмите "Обновить конфигурацию оборудования".<br><br>
+6) Далее Windows предложит установить драйвера для устройства. Установите их.<br><br>
+7) На панели управления в разделе "Устройства Bluetooth" установите галочку "Включить обнаружение", чтобы другие устройства могли обнаруживать ваше (при этом адаптер должен быть подключен).<br><br>
+<br>
+<b>Как установить драйвера Microsoft для WinXP SP1?</b><br><br>
+Установите вот это обновление: <a href="http://download.runpad-shell.com/runpadcommon/bt/q323183_wxp_sp2_x86_enu.exe">скачать</a><br>
+Также посмотрите вот эти ссылки:<br>
+<a href="http://support.microsoft.com/kb/883259">http://support.microsoft.com/kb/883259</a><br>
+<a href="http://support.microsoft.com/kb/883258">http://support.microsoft.com/kb/883258</a><br>
+<a href="http://support.microsoft.com/kb/323183">http://support.microsoft.com/kb/323183</a><br>
+<a href="http://support.microsoft.com/kb/841803/#appliesto">http://support.microsoft.com/kb/841803</a><br>
+Далее выполните установку как и для XP SP2<br>
+<br><br>
+
+
+
+<br>
+<br>
+</div>
+</body>
+</html>

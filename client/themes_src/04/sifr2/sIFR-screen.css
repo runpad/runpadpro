@@ -1,0 +1,30 @@
+/* These are standard sIFR styles... do not modify */
+
+.sIFR-flash {
+	visibility: visible !important;
+	margin: 0;
+}
+
+.sIFR-replaced {
+	visibility: visible !important;
+}
+
+span.sIFR-alternate {
+	position: absolute !important;
+	left: 0 !important;
+	top: 0 !important;
+	width: 0 !important;
+	height: 0 !important;
+	display: block !important;
+	overflow: hidden !important;
+}
+
+/* Hide Adblock Object tab: the text should show up just fine, not poorly with a tab laid over it. */
+.sIFR-flash + div[adblocktab=true] {
+  display: none !important;
+}
+
+/* These "decoy" styles are used to hide the browser text before it is replaced... the negative-letter spacing in this case is used to make the browser text metrics match up with the sIFR text metrics since the sIFR text in this example is so much narrower... your own settings may vary... any weird sizing issues you may run into are usually fixed by tweaking these decoy styles */
+
+
+

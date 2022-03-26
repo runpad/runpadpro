@@ -1,0 +1,33 @@
+
+     body {
+                MARGIN-LEFT:      20px;
+                MARGIN-RIGHT:     20px;
+                MARGIN-TOP:       20px;
+                MARGIN-BOTTOM:    20px;
+
+                FONT-FAMILY:      Verdana;
+                FONT-SIZE:        9pt;
+                COLOR:            #000000;
+                BACKGROUND-COLOR: #FFFFFF;
+
+                BACKGROUND:       url(bg.gif) 0 0 repeat-y;
+     }
+
+     td {
+                FONT-FAMILY:      Verdana;
+                FONT-SIZE:        8pt;
+     }
+
+     a:link {
+                COLOR:            #000000;
+     }
+
+     a:visited {
+                COLOR:            #000000;
+     }
+
+     a:hover {
+                COLOR:            #000000;
+     }
+
+     A {text-decoration: none;} 

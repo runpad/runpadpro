@@ -1,0 +1,9 @@
+
+100 ICON "res/connect2.ico"
+101 ICON "res/disconnect.ico"
+
+110 ICON "res/page0.ico"
+111 ICON "res/page1.ico"
+112 ICON "res/page2.ico"
+
+1 24 "res/rsdbview.exe.manifest"
